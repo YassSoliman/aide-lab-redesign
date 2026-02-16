@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { Play, X, Maximize2, RotateCcw } from 'lucide-react'
+import { Play, X, Maximize2 } from 'lucide-react'
 
 export default function VirtualTour({ theme }) {
   const [isExpanded, setIsExpanded] = useState(false)
@@ -131,20 +131,23 @@ export default function VirtualTour({ theme }) {
                   group-hover:bg-transparent pointer-events-none`}
                 />
 
-                {/* Play overlay */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                {/* Play overlay - clickable button */}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setIsExpanded(true)
+                  }}
+                  className="absolute inset-0 flex items-center justify-center"
+                  aria-label="Ouvrir la visite en plein écran"
+                >
                   <motion.div
                     whileHover={{ scale: 1.1 }}
-                    className={`w-20 h-20 rounded-full flex items-center justify-center
-                      transition-all duration-300 group-hover:scale-110
-                      ${isDark
-                        ? 'bg-coral text-white'
-                        : 'bg-coral text-white'
-                      }`}
+                    className="w-20 h-20 rounded-full flex items-center justify-center
+                      transition-all duration-300 bg-coral text-white hover:bg-coral-dark"
                   >
                     <Maximize2 className="w-8 h-8" />
                   </motion.div>
-                </div>
+                </button>
 
                 {/* Corner label */}
                 <div className={`absolute top-4 left-4 px-3 py-1.5 text-xs font-mono tracking-wide
@@ -167,19 +170,6 @@ export default function VirtualTour({ theme }) {
           </div>
         </div>
 
-        {/* Floating navigation hint */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 1 }}
-          className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3
-            px-4 py-2 rounded-full ${
-              isDark ? 'bg-white/5 text-stone/60' : 'bg-ink/5 text-ink/60'
-            }`}
-        >
-          <RotateCcw className="w-4 h-4" />
-          <span className="text-sm">Glissez pour explorer</span>
-        </motion.div>
       </section>
 
       {/* Fullscreen modal */}

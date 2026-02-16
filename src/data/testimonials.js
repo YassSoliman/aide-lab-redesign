@@ -41,7 +41,7 @@ export const services = [
     id: 3,
     title: "Planification 3D",
     description: "Visualisez et planifiez chaque cas avec précision grâce à nos outils de modélisation 3D de dernière génération.",
-    image: "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop",
     link: "/fr/produits/implants#produits-27"
   },
   {
