@@ -28,8 +28,8 @@ export default function Hero({ theme }) {
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 rounded-full bg-coral/5 blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-64 h-64 rounded-full bg-sage/10 blur-3xl" />
+      <div className="hidden md:block absolute top-1/4 right-0 w-96 h-96 rounded-full bg-coral/5 blur-3xl" />
+      <div className="hidden md:block absolute bottom-1/4 left-0 w-64 h-64 rounded-full bg-sage/10 blur-3xl" />
 
       <div className="container-custom relative z-10 pt-32 pb-20 md:pt-40 md:pb-32">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -48,7 +48,7 @@ export default function Hero({ theme }) {
             </motion.div>
 
             {/* Main headline - word by word animation */}
-            <h1 className="mb-8">
+            <h1 className="mb-8 break-words">
               {titleWords.map((word, i) => (
                 <motion.span
                   key={i}
@@ -59,7 +59,7 @@ export default function Hero({ theme }) {
                     delay: 0.3 + i * 0.1,
                     ease: [0.16, 1, 0.3, 1]
                   }}
-                  className={`inline-block mr-4 font-display text-display leading-none
+                  className={`inline-block mr-2 md:mr-4 font-display text-display leading-none
                     ${isDark ? 'text-stone' : 'text-ink'}
                     ${word === 'précision' ? 'text-coral italic' : ''}`}
                 >
@@ -88,7 +88,7 @@ export default function Hero({ theme }) {
               onSubmit={(e) => e.preventDefault()}
               className="mb-10"
             >
-              <div className={`relative flex items-center max-w-md transition-all duration-300 ${
+              <div className={`relative flex items-center w-full max-w-md transition-all duration-300 ${
                 isFocused ? 'scale-[1.02]' : ''
               }`}>
                 <input
@@ -98,7 +98,7 @@ export default function Hero({ theme }) {
                   onFocus={() => setIsFocused(true)}
                   onBlur={() => setIsFocused(false)}
                   placeholder="votre@courriel.com"
-                  className={`w-full px-6 py-4 pr-14 text-base rounded-none outline-none transition-all duration-300
+                  className={`w-full px-4 md:px-6 py-4 pr-14 text-base rounded-none outline-none transition-all duration-300
                     ${isDark
                       ? 'bg-white/5 border-2 border-white/10 text-stone placeholder:text-stone/40 focus:border-coral/50'
                       : 'bg-ink/5 border-2 border-ink/10 text-ink placeholder:text-ink/40 focus:border-coral/50'
@@ -122,7 +122,7 @@ export default function Hero({ theme }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 1.1 }}
-              className={`flex flex-wrap items-center gap-6 text-sm font-mono
+              className={`flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-6 text-sm font-mono
                 ${isDark ? 'text-stone/50' : 'text-ink/50'}`}
             >
               <div className="flex items-center gap-2">

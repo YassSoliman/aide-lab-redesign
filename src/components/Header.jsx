@@ -97,11 +97,11 @@ export default function Header({ theme }) {
           <div className="flex items-center gap-4">
             <a
               href="tel:1-888-350-2246"
-              className={`hidden md:flex items-center gap-2 text-sm font-mono
+              className={`flex items-center gap-2 text-sm font-mono
                 ${isDark ? 'text-coral' : 'text-coral-dark'}`}
             >
               <Phone className="w-4 h-4" />
-              1 (888) 350-2246
+              <span className="hidden md:inline">1 (888) 350-2246</span>
             </a>
 
             <a
@@ -139,6 +139,7 @@ export default function Header({ theme }) {
                 <div key={item.name}>
                   <a
                     href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
                     className={`block py-2 text-lg font-medium
                       ${isDark ? 'text-stone' : 'text-ink'}`}
                   >
@@ -150,7 +151,8 @@ export default function Header({ theme }) {
                         <a
                           key={child.name}
                           href={child.href}
-                          className={`block py-1 text-sm
+                          onClick={() => setMobileMenuOpen(false)}
+                          className={`block py-1.5 text-sm
                             ${isDark ? 'text-stone/60' : 'text-ink/60'}`}
                         >
                           {child.name}

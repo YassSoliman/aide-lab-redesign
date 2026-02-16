@@ -13,14 +13,14 @@ export default function CTABand({ theme }) {
       className="relative overflow-hidden bg-coral"
     >
       {/* Decorative elements */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="hidden md:block absolute inset-0 opacity-10">
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-white blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full bg-ink blur-3xl" />
       </div>
 
       {/* Grid pattern */}
       <div
-        className="absolute inset-0 opacity-5"
+        className="hidden md:block absolute inset-0 opacity-5"
         style={{
           backgroundImage: `linear-gradient(#000 1px, transparent 1px),
                             linear-gradient(90deg, #000 1px, transparent 1px)`,
@@ -56,7 +56,7 @@ export default function CTABand({ theme }) {
             <a
               href="tel:1-888-350-2246"
               className="group flex items-center gap-4 px-6 py-4 bg-white text-ink
-                hover:bg-ink hover:text-white transition-all duration-300"
+                hover:bg-ink hover:text-white transition-all duration-300 w-full sm:w-auto active:scale-95"
             >
               <div className="p-2 bg-coral/10 group-hover:bg-coral/20 transition-colors">
                 <Phone className="w-5 h-5 text-coral" />
@@ -74,7 +74,7 @@ export default function CTABand({ theme }) {
               href="/fr/contact"
               className="group flex items-center justify-between gap-4 px-6 py-4
                 bg-ink text-white hover:bg-white hover:text-ink
-                transition-all duration-300"
+                transition-all duration-300 w-full sm:w-auto active:scale-95"
             >
               <div className="flex items-center gap-4">
                 <div className="p-2 bg-white/10 group-hover:bg-coral/10 transition-colors">

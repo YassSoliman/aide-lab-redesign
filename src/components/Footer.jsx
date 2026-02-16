@@ -46,9 +46,9 @@ export default function Footer({ theme }) {
                 <a
                   key={social}
                   href="#"
-                  className="w-10 h-10 flex items-center justify-center
+                  className="w-11 h-11 flex items-center justify-center
                     bg-white/5 hover:bg-coral hover:text-white
-                    transition-all duration-200"
+                    transition-all duration-200 active:scale-95"
                   aria-label={social}
                 >
                   <span className="text-xs font-mono uppercase">{social[0]}</span>
@@ -62,12 +62,12 @@ export default function Footer({ theme }) {
             <h4 className="text-sm font-mono uppercase tracking-wider text-stone/40 mb-6">
               Navigation
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-stone/70 hover:text-coral transition-colors duration-200 link-underline"
+                    className="text-stone/70 hover:text-coral transition-colors duration-200 link-underline py-1.5 inline-block"
                   >
                     {link.name}
                   </a>
@@ -81,12 +81,12 @@ export default function Footer({ theme }) {
             <h4 className="text-sm font-mono uppercase tracking-wider text-stone/40 mb-6">
               Produits
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {products.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-stone/70 hover:text-coral transition-colors duration-200 link-underline"
+                    className="text-stone/70 hover:text-coral transition-colors duration-200 link-underline py-1.5 inline-block"
                   >
                     {link.name}
                   </a>
@@ -155,12 +155,12 @@ export default function Footer({ theme }) {
             <p className="text-stone/40 text-sm">
               © {currentYear} Laboratoire AIDE. Tous droits réservés.
             </p>
-            <div className="flex items-center gap-6 text-sm text-stone/40">
-              <a href="#" className="hover:text-coral transition-colors">
+            <div className="flex items-center gap-4 md:gap-6 text-sm text-stone/40">
+              <a href="#" className="hover:text-coral transition-colors py-1">
                 Politique de confidentialité
               </a>
-              <span>·</span>
-              <span className="font-mono">FR / EN</span>
+              <span className="hidden sm:inline">·</span>
+              <span className="font-mono py-1">FR / EN</span>
             </div>
           </div>
         </div>

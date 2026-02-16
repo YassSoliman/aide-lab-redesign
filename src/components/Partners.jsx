@@ -40,13 +40,13 @@ export default function Partners({ theme }) {
         className="relative"
       >
         {/* Gradient masks */}
-        <div className={`absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none
+        <div className={`absolute left-0 top-0 bottom-0 w-16 md:w-32 z-10 pointer-events-none
           ${isDark
             ? 'bg-gradient-to-r from-ink to-transparent'
             : 'bg-gradient-to-r from-stone to-transparent'
           }`}
         />
-        <div className={`absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none
+        <div className={`absolute right-0 top-0 bottom-0 w-16 md:w-32 z-10 pointer-events-none
           ${isDark
             ? 'bg-gradient-to-l from-ink to-transparent'
             : 'bg-gradient-to-l from-stone to-transparent'
@@ -60,7 +60,7 @@ export default function Partners({ theme }) {
               key={`${partner.name}-${index}`}
               className="flex-shrink-0 px-8 md:px-12"
             >
-              <div className={`group relative h-16 w-40 md:w-48 flex items-center justify-center gap-3
+              <div className={`group relative h-16 w-32 md:w-48 flex items-center justify-center gap-2 md:gap-3
                 transition-all duration-300 ${
                   isDark
                     ? 'opacity-50 hover:opacity-100'

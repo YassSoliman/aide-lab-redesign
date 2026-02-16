@@ -76,7 +76,7 @@ export default function VirtualTour({ theme }) {
               </p>
 
               {/* Stats row */}
-              <div className={`flex gap-12 mb-10 ${
+              <div className={`flex flex-col sm:flex-row gap-4 sm:gap-8 md:gap-12 mb-10 ${
                 isDark ? 'text-stone/60' : 'text-ink/60'
               }`}>
                 <div>
@@ -157,8 +157,8 @@ export default function VirtualTour({ theme }) {
               </div>
 
               {/* Frame decorations */}
-              <div className="absolute -top-3 -left-3 w-12 h-12 border-t-2 border-l-2 border-coral" />
-              <div className="absolute -bottom-3 -right-3 w-12 h-12 border-b-2 border-r-2 border-coral" />
+              <div className="hidden md:block absolute -top-3 -left-3 w-12 h-12 border-t-2 border-l-2 border-coral" />
+              <div className="hidden md:block absolute -bottom-3 -right-3 w-12 h-12 border-b-2 border-r-2 border-coral" />
 
               {/* Hint text */}
               <p className={`mt-6 text-center text-sm font-mono ${

@@ -72,10 +72,8 @@ export default function ValueProps({ theme }) {
                   delay: index * 0.15,
                   ease: [0.16, 1, 0.3, 1]
                 }}
-                style={{
-                  marginTop: index === 1 ? '40px' : index === 2 ? '80px' : '0'
-                }}
                 className={`group relative p-8 md:p-10 transition-all duration-500
+                  ${index === 1 ? 'md:mt-10' : index === 2 ? 'md:mt-20' : ''}
                   ${isDark
                     ? 'bg-ink border border-white/5 hover:border-coral/20'
                     : 'bg-stone border border-ink/5 hover:border-coral/20'

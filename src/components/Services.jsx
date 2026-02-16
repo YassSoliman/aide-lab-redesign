@@ -41,7 +41,7 @@ export default function Services({ theme }) {
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-7 relative"
+            className="lg:col-span-7 relative order-2 lg:order-1"
           >
             <div className="relative aspect-[4/3] overflow-hidden">
               <AnimatePresence mode="wait">
@@ -122,7 +122,7 @@ export default function Services({ theme }) {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="lg:col-span-5"
+            className="lg:col-span-5 order-1 lg:order-2"
           >
             <div className="space-y-2">
               {services.map((service, index) => (
@@ -171,7 +171,7 @@ export default function Services({ theme }) {
             <div className="mt-8 pt-8 border-t border-white/5">
               <a
                 href="/fr/services"
-                className="btn-secondary w-full justify-center"
+                className="btn-secondary w-full justify-center active:scale-95 transition-transform"
               >
                 Voir tous nos services
                 <ArrowRight className="w-4 h-4" />

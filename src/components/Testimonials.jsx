@@ -158,19 +158,19 @@ export default function Testimonials({ theme }) {
             isDark ? 'border-white/5' : 'border-ink/5'
           }`}
         >
-          <div className={`inline-flex items-center gap-8 ${
+          <div className={`inline-flex flex-col md:flex-row items-center gap-6 md:gap-8 ${
             isDark ? 'text-stone/50' : 'text-ink/50'
           }`}>
             <div className="text-center">
               <div className="text-3xl font-display text-coral">500+</div>
               <div className="text-xs font-mono uppercase tracking-wide">Dentistes partenaires</div>
             </div>
-            <div className={`w-px h-12 ${isDark ? 'bg-white/10' : 'bg-ink/10'}`} />
+            <div className={`hidden md:block w-px h-12 ${isDark ? 'bg-white/10' : 'bg-ink/10'}`} />
             <div className="text-center">
               <div className="text-3xl font-display text-coral">99.8%</div>
               <div className="text-xs font-mono uppercase tracking-wide">Taux de satisfaction</div>
             </div>
-            <div className={`w-px h-12 ${isDark ? 'bg-white/10' : 'bg-ink/10'}`} />
+            <div className={`hidden md:block w-px h-12 ${isDark ? 'bg-white/10' : 'bg-ink/10'}`} />
             <div className="text-center">
               <div className="text-3xl font-display text-coral">25+</div>
               <div className="text-xs font-mono uppercase tracking-wide">Années d'expérience</div>
