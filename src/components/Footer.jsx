@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { MapPin, Phone, Mail, Clock, ExternalLink } from 'lucide-react'
+import Logo from './Logo'
 
 const quickLinks = [
   { name: "Accueil", href: "/" },
@@ -28,11 +29,7 @@ export default function Footer({ theme }) {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <a href="/" className="inline-block mb-6">
-              <img
-                src="http://www.aidelab.com/sites/default/files/logo.png"
-                alt="AIDE Lab"
-                className="h-10 brightness-0 invert"
-              />
+              <Logo inverted={true} className="h-10" />
             </a>
             <p className="text-stone/60 text-sm leading-relaxed mb-6">
               Nos experts ne cessent de surveiller les actualités du domaine

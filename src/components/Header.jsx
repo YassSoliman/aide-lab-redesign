@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChevronDown, Phone } from 'lucide-react'
 import { navigation } from '../data/testimonials'
+import Logo from './Logo'
 
 export default function Header({ theme }) {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -35,13 +36,7 @@ export default function Header({ theme }) {
         <nav className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
           <a href="/" className="relative z-10">
-            <img
-              src="http://www.aidelab.com/sites/default/files/logo.png"
-              alt="AIDE Lab"
-              className={`h-10 md:h-12 transition-all duration-300 ${
-                isDark ? 'brightness-0 invert' : ''
-              }`}
-            />
+            <Logo inverted={isDark} className="h-10 md:h-12 transition-all duration-300" />
           </a>
 
           {/* Desktop Navigation */}

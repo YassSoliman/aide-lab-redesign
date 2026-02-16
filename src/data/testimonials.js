@@ -27,41 +27,41 @@ export const services = [
     id: 1,
     title: "Implants",
     description: "Notre expertise vous offre des produits d'une haute qualité et d'un esthétisme inégalé. Technologies de pointe pour des résultats parfaits.",
-    image: "http://www.aidelab.com/sites/all/themes/aidelab/images/home-services/service-assistance.jpg",
+    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop",
     link: "/fr/produits/implants"
   },
   {
     id: 2,
     title: "Couronnes & Ponts",
     description: "Redonnez à vos patients le goût de sourire à pleines dents. Précision artisanale combinée à la technologie moderne.",
-    image: "http://www.aidelab.com/sites/all/themes/aidelab/images/home-services/choix-de-couleurs.jpg",
+    image: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&h=600&fit=crop",
     link: "/fr/produits/couronnes-et-ponts"
   },
   {
     id: 3,
     title: "Planification 3D",
     description: "Visualisez et planifiez chaque cas avec précision grâce à nos outils de modélisation 3D de dernière génération.",
-    image: "http://www.aidelab.com/sites/all/themes/aidelab/images/home-services/nobelclinician-software-small.jpg",
+    image: "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=800&h=600&fit=crop",
     link: "/fr/produits/implants#produits-27"
   },
   {
     id: 4,
     title: "Assistance sur place",
     description: "Profitez de notre expertise directement à votre clinique pour vos cas les plus complexes.",
-    image: "http://www.aidelab.com/sites/all/themes/aidelab/images/home-services/service-assistance.jpg",
+    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop",
     link: "/fr/services"
   }
 ]
 
 export const partners = [
-  { name: "Nobel Biocare", logo: "http://www.aidelab.com/sites/default/files/logo-nobel-biocare.jpg" },
-  { name: "Straumann", logo: "http://www.aidelab.com/sites/default/files/logo-straumann.jpg" },
-  { name: "Zirkonzahn", logo: "http://www.aidelab.com/sites/default/files/logo-zirkonzahn.jpg" },
-  { name: "Ivoclar Vivadent", logo: "http://www.aidelab.com/sites/default/files/logo-ivoclar-vivadent.jpg" },
-  { name: "Astratech Dental", logo: "http://www.aidelab.com/sites/default/files/logo-astratech.jpg" },
-  { name: "Atlantis", logo: "http://www.aidelab.com/sites/default/files/logo-atlantis.jpg" },
-  { name: "Camlog", logo: "http://www.aidelab.com/sites/default/files/logo-camlog.jpg" },
-  { name: "Implant Direct", logo: "http://www.aidelab.com/sites/default/files/logo-implant-direct.jpg" }
+  { name: "Nobel Biocare", initials: "NB", color: "#003366" },
+  { name: "Straumann", initials: "S", color: "#E31937" },
+  { name: "Zirkonzahn", initials: "ZZ", color: "#1A1A1A" },
+  { name: "Ivoclar Vivadent", initials: "IV", color: "#00529B" },
+  { name: "Dentsply Sirona", initials: "DS", color: "#0066B3" },
+  { name: "Atlantis", initials: "A", color: "#00A3E0" },
+  { name: "Camlog", initials: "CL", color: "#E85A4F" },
+  { name: "Implant Direct", initials: "ID", color: "#6B8E23" }
 ]
 
 export const navigation = [

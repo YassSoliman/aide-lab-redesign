@@ -26,7 +26,7 @@ export default function VirtualTour({ theme }) {
             initial={{ scale: 1.1 }}
             animate={isInView ? { scale: 1 } : {}}
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            src="http://www.aidelab.com/sites/all/themes/aidelab/images/bg-virtual-tour.jpg"
+            src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1920&h=1080&fit=crop"
             alt=""
             className="w-full h-full object-cover"
           />

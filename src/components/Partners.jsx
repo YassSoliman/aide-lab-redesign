@@ -60,18 +60,24 @@ export default function Partners({ theme }) {
               key={`${partner.name}-${index}`}
               className="flex-shrink-0 px-8 md:px-12"
             >
-              <div className={`group relative h-16 w-32 md:w-40 flex items-center justify-center
+              <div className={`group relative h-16 w-40 md:w-48 flex items-center justify-center gap-3
                 transition-all duration-300 ${
                   isDark
-                    ? 'grayscale opacity-40 hover:grayscale-0 hover:opacity-100'
-                    : 'grayscale opacity-50 hover:grayscale-0 hover:opacity-100'
+                    ? 'opacity-50 hover:opacity-100'
+                    : 'opacity-60 hover:opacity-100'
                 }`}
               >
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="max-h-full max-w-full object-contain"
-                />
+                <div
+                  className="w-10 h-10 flex items-center justify-center rounded text-white font-bold text-sm"
+                  style={{ backgroundColor: partner.color }}
+                >
+                  {partner.initials}
+                </div>
+                <span className={`text-sm font-medium whitespace-nowrap ${
+                  isDark ? 'text-stone' : 'text-ink'
+                }`}>
+                  {partner.name}
+                </span>
               </div>
             </div>
           ))}

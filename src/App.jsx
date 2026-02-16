@@ -13,17 +13,20 @@ import ThemeSwitcher from './components/ThemeSwitcher'
 import './index.css'
 
 function App() {
-  const [theme, setTheme] = useState('dark')
-  const [isLoaded, setIsLoaded] = useState(false)
-
-  useEffect(() => {
-    // Check URL params for theme
+  // Initialize theme from URL query parameter
+  const getInitialTheme = () => {
     const params = new URLSearchParams(window.location.search)
     const urlTheme = params.get('theme')
     if (urlTheme && ['dark', 'light'].includes(urlTheme)) {
-      setTheme(urlTheme)
+      return urlTheme
     }
+    return 'dark'
+  }
 
+  const [theme, setTheme] = useState(getInitialTheme)
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
     // Mark as loaded after a brief delay for animations
     setTimeout(() => setIsLoaded(true), 100)
   }, [])

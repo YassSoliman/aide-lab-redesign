@@ -16,7 +16,7 @@ export default function Hero({ theme }) {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img
-          src="http://www.aidelab.com/sites/all/themes/aidelab/images/home-slider/slide2.jpg"
+          src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1920&h=1080&fit=crop"
           alt=""
           className="w-full h-full object-cover opacity-20"
         />
@@ -160,7 +160,7 @@ export default function Hero({ theme }) {
                 className="relative overflow-hidden"
               >
                 <img
-                  src="http://www.aidelab.com/sites/all/themes/aidelab/images/home-services/choix-de-couleurs.jpg"
+                  src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&h=400&fit=crop"
                   alt="Précision dentaire"
                   className="w-full h-auto object-cover"
                 />
