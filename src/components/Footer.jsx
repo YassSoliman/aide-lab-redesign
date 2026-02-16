@@ -31,7 +31,7 @@ export default function Footer({ theme }) {
               <img
                 src="/logo.png"
                 alt="AIDE Lab"
-                className="h-10 brightness-0 invert"
+                className="h-10"
               />
             </a>
             <p className="text-stone/60 text-sm leading-relaxed mb-6">

@@ -38,9 +38,7 @@ export default function Header({ theme }) {
             <img
               src="/logo.png"
               alt="AIDE Lab"
-              className={`h-10 md:h-12 transition-all duration-300 ${
-                isDark ? 'brightness-0 invert' : ''
-              }`}
+              className="h-10 md:h-12 transition-all duration-300"
             />
           </a>
 
