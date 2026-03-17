@@ -94,7 +94,7 @@ export default function Testimonials({ theme }) {
                     {[...Array(currentTestimonial.rating)].map((_, i) => (
                       <Star
                         key={i}
-                        className="w-4 h-4 fill-coral text-coral"
+                        className="w-4 h-4 fill-amber-500 text-amber-500"
                       />
                     ))}
                   </div>

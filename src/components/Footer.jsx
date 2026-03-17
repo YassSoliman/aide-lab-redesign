@@ -21,7 +21,7 @@ export default function Footer({ theme }) {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className={`${isDark ? 'bg-ink-lighter' : 'bg-ink'} text-stone`}>
+    <footer className={`${isDark ? 'bg-ink-lighter' : 'bg-ink'} text-stone border-t border-coral-light/15`}>
       {/* Main footer */}
       <div className="container-custom py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
