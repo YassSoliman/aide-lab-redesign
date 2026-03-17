@@ -162,10 +162,10 @@ export default function Header({ theme }) {
                   )}
                 </div>
               ))}
-              <div className="pt-4 border-t border-white/10">
+              <div className={`pt-4 border-t ${isDark ? 'border-white/10' : 'border-ink/10'}`}>
                 <a
                   href="tel:1-888-350-2246"
-                  className="flex items-center gap-2 text-coral font-mono"
+                  className={`flex items-center gap-2 font-mono ${isDark ? 'text-coral-light' : 'text-coral'}`}
                 >
                   <Phone className="w-4 h-4" />
                   1 (888) 350-2246

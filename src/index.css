@@ -5,21 +5,21 @@
 /* Theme configuration */
 @theme {
   /* Colors */
-  --color-ink: #0A0A0B;
-  --color-ink-light: #141416;
-  --color-ink-lighter: #1E1E22;
-  --color-stone: #F5F3EF;
-  --color-stone-dark: #E8E4DC;
-  --color-stone-darker: #D4CFC4;
-  --color-coral: #FF6B4A;
-  --color-coral-light: #FF8A70;
-  --color-coral-dark: #E55A3A;
-  --color-sage: #8B9D83;
-  --color-sage-light: #A3B39B;
-  --color-sage-dark: #6E8066;
-  --color-silver: #C4C4C4;
-  --color-silver-light: #E0E0E0;
-  --color-silver-dark: #9A9A9A;
+  --color-ink: #3A1D17;
+  --color-ink-light: #4E3029;
+  --color-ink-lighter: #624440;
+  --color-stone: #FAFBFC;
+  --color-stone-dark: #EEF3F8;
+  --color-stone-darker: #DDE6EE;
+  --color-coral: #2E6FA5;
+  --color-coral-light: #A1C8EA;
+  --color-coral-dark: #1E5A8A;
+  --color-sage: #8B7B73;
+  --color-sage-light: #A59E98;
+  --color-sage-dark: #6E6058;
+  --color-silver: #B0A8A3;
+  --color-silver-light: #D4CEC9;
+  --color-silver-dark: #8A7E78;
 
   /* Typography */
   --font-display: "Instrument Serif", "Fraunces", Georgia, serif;
@@ -93,8 +93,8 @@ body.light {
 }
 
 ::selection {
-  background-color: var(--color-coral);
-  color: white;
+  background-color: var(--color-coral-light);
+  color: var(--color-ink);
 }
 
 /* Custom components */
@@ -147,7 +147,7 @@ body.light {
   .btn-primary:hover {
     background-color: var(--color-coral-dark);
     transform: scale(1.02);
-    box-shadow: 0 20px 25px -5px rgb(255 107 74 / 0.2);
+    box-shadow: 0 20px 25px -5px rgb(46 111 165 / 0.25);
   }
 
   .btn-primary:active {
@@ -160,7 +160,7 @@ body.light {
     justify-content: center;
     gap: 0.5rem;
     padding: 1rem 2rem;
-    border: 1px solid rgb(245 243 239 / 0.3);
+    border: 1px solid rgb(250 251 252 / 0.3);
     color: var(--color-stone);
     font-weight: 500;
     border-radius: 0;
@@ -178,7 +178,7 @@ body.light {
   }
 
   .light .btn-secondary {
-    border-color: rgb(10 10 11 / 0.3);
+    border-color: rgb(58 29 23 / 0.3);
     color: var(--color-ink);
   }
 
@@ -220,7 +220,7 @@ body.light {
 
   /* Glass card effect */
   .glass-card {
-    background-color: rgb(20 20 22 / 0.5);
+    background-color: rgb(58 29 23 / 0.5);
     backdrop-filter: blur(24px);
     border: 1px solid rgb(255 255 255 / 0.05);
     border-radius: 2px;
@@ -228,7 +228,7 @@ body.light {
 
   .light .glass-card {
     background-color: rgb(255 255 255 / 0.7);
-    border-color: rgb(10 10 11 / 0.05);
+    border-color: rgb(58 29 23 / 0.05);
   }
 }
 

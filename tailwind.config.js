@@ -10,29 +10,29 @@ export default {
       colors: {
         // Primary palette - Precision Craft
         ink: {
-          DEFAULT: '#0A0A0B',
-          light: '#141416',
-          lighter: '#1E1E22',
+          DEFAULT: '#3A1D17',
+          light: '#4E3029',
+          lighter: '#624440',
         },
         stone: {
-          DEFAULT: '#F5F3EF',
-          dark: '#E8E4DC',
-          darker: '#D4CFC4',
+          DEFAULT: '#FAFBFC',
+          dark: '#EEF3F8',
+          darker: '#DDE6EE',
         },
         coral: {
-          DEFAULT: '#FF6B4A',
-          light: '#FF8A70',
-          dark: '#E55A3A',
+          DEFAULT: '#2E6FA5',
+          light: '#A1C8EA',
+          dark: '#1E5A8A',
         },
         sage: {
-          DEFAULT: '#8B9D83',
-          light: '#A3B39B',
-          dark: '#6E8066',
+          DEFAULT: '#8B7B73',
+          light: '#A59E98',
+          dark: '#6E6058',
         },
         silver: {
-          DEFAULT: '#C4C4C4',
-          light: '#E0E0E0',
-          dark: '#9A9A9A',
+          DEFAULT: '#B0A8A3',
+          light: '#D4CEC9',
+          dark: '#8A7E78',
         },
       },
       fontFamily: {

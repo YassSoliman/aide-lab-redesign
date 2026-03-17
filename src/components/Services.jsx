@@ -168,7 +168,7 @@ export default function Services({ theme }) {
             </div>
 
             {/* View all services link */}
-            <div className="mt-8 pt-8 border-t border-white/5">
+            <div className={`mt-8 pt-8 border-t ${isDark ? 'border-white/5' : 'border-ink/5'}`}>
               <a
                 href="/fr/services"
                 className="btn-secondary w-full justify-center active:scale-95 transition-transform"

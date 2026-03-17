@@ -10,7 +10,7 @@ export default function CTABand({ theme }) {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden bg-coral"
+      className="relative overflow-hidden bg-coral-light"
     >
       {/* Decorative elements */}
       <div className="hidden md:block absolute inset-0 opacity-10">
@@ -22,8 +22,8 @@ export default function CTABand({ theme }) {
       <div
         className="hidden md:block absolute inset-0 opacity-5"
         style={{
-          backgroundImage: `linear-gradient(#000 1px, transparent 1px),
-                            linear-gradient(90deg, #000 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgb(58 29 23 / 0.15) 1px, transparent 1px),
+                            linear-gradient(90deg, rgb(58 29 23 / 0.15) 1px, transparent 1px)`,
           backgroundSize: '40px 40px'
         }}
       />
@@ -36,10 +36,10 @@ export default function CTABand({ theme }) {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-display text-2xl-fluid text-white mb-4">
+            <h2 className="font-display text-2xl-fluid text-ink mb-4">
               Prêt à collaborer?
             </h2>
-            <p className="text-white/80 text-lg max-w-md">
+            <p className="text-ink/80 text-lg max-w-md">
               Contactez-nous dès aujourd'hui pour discuter de vos besoins
               et découvrir comment nous pouvons vous aider.
             </p>
@@ -58,11 +58,11 @@ export default function CTABand({ theme }) {
               className="group flex items-center gap-4 px-6 py-4 bg-white text-ink
                 hover:bg-ink hover:text-white transition-all duration-300 w-full sm:w-auto active:scale-95"
             >
-              <div className="p-2 bg-coral/10 group-hover:bg-coral/20 transition-colors">
-                <Phone className="w-5 h-5 text-coral" />
+              <div className="p-2 bg-ink/10 group-hover:bg-ink/20 transition-colors">
+                <Phone className="w-5 h-5 text-ink" />
               </div>
               <div>
-                <div className="text-xs font-mono uppercase tracking-wide opacity-60 mb-1">
+                <div className="text-xs font-mono uppercase tracking-wide text-ink/60 mb-1">
                   Sans frais
                 </div>
                 <div className="font-medium">1 (888) 350-2246</div>

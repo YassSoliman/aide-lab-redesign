@@ -20,7 +20,7 @@ function App() {
     if (urlTheme && ['dark', 'light'].includes(urlTheme)) {
       return urlTheme
     }
-    return 'dark'
+    return 'light'
   }
 
   const [theme, setTheme] = useState(getInitialTheme)
