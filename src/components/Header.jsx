@@ -36,7 +36,7 @@ export default function Header({ theme }) {
           {/* Logo */}
           <a href="/" className="relative z-10">
             <img
-              src="/logo.png"
+              src={isDark ? "/logo-white.png" : "/logo.png"}
               alt="AIDE Lab"
               className="h-10 md:h-12 transition-all duration-300"
             />

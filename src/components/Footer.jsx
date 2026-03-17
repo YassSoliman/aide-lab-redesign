@@ -29,7 +29,7 @@ export default function Footer({ theme }) {
           <div className="lg:col-span-1">
             <a href="/" className="inline-block mb-6">
               <img
-                src="/logo.png"
+                src="/logo-white.png"
                 alt="AIDE Lab"
                 className="h-10"
               />
