@@ -1,32 +1,22 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Phone, ArrowRight, Mail } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
-export default function CTABand({ theme }) {
+export default function CTABand() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const isDark = theme === 'dark'
 
   return (
     <section
       ref={ref}
-      className={`relative overflow-hidden ${isDark ? 'bg-ink-lighter' : 'bg-ink'}`}
+      className="relative overflow-hidden bg-ink"
     >
       {/* Decorative elements */}
       <div className="hidden md:block absolute inset-0 opacity-10">
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-coral-light blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full bg-white blur-3xl" />
       </div>
-
-      {/* Grid pattern */}
-      <div
-        className="hidden md:block absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `linear-gradient(rgb(255 255 255 / 0.05) 1px, transparent 1px),
-                            linear-gradient(90deg, rgb(255 255 255 / 0.05) 1px, transparent 1px)`,
-          backgroundSize: '40px 40px'
-        }}
-      />
 
       <div className="container-custom relative z-10 py-20 md:py-28">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -37,11 +27,11 @@ export default function CTABand({ theme }) {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-display text-2xl-fluid text-stone mb-4">
-              Prêt à collaborer?
+              Pr\u00eat \u00e0 collaborer?
             </h2>
             <p className="text-stone/70 text-lg max-w-md">
-              Contactez-nous dès aujourd'hui pour discuter de vos besoins
-              et découvrir comment nous pouvons vous aider.
+              Contactez-nous d\u00e8s aujourd'hui pour discuter de vos besoins
+              et d\u00e9couvrir comment nous pouvons vous aider.
             </p>
           </motion.div>
 
@@ -52,7 +42,6 @@ export default function CTABand({ theme }) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            {/* Phone */}
             <a
               href="tel:1-888-350-2246"
               className="group flex items-center gap-4 px-6 py-4 bg-white text-ink
@@ -69,9 +58,8 @@ export default function CTABand({ theme }) {
               </div>
             </a>
 
-            {/* Contact form */}
-            <a
-              href="/fr/contact"
+            <Link
+              to="/fr/contact"
               className="group flex items-center justify-between gap-4 px-6 py-4
                 bg-coral text-white hover:bg-coral-dark
                 transition-all duration-300 w-full sm:w-auto active:scale-95"
@@ -88,7 +76,7 @@ export default function CTABand({ theme }) {
                 </div>
               </div>
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>

@@ -1,20 +1,20 @@
 import { useState, useRef } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
-import { services } from '../data/testimonials'
+import { Link } from 'react-router-dom'
+import { services } from '../data/services'
 
-export default function Services({ theme }) {
+export default function Services() {
   const [activeService, setActiveService] = useState(0)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const isDark = theme === 'dark'
 
   const currentService = services[activeService]
 
   return (
     <section
       ref={ref}
-      className={`section-padding overflow-hidden ${isDark ? 'bg-ink' : 'bg-stone'}`}
+      className="section-padding overflow-hidden bg-stone"
     >
       <div className="container-custom">
         {/* Section header */}
@@ -24,13 +24,11 @@ export default function Services({ theme }) {
           transition={{ duration: 0.6 }}
           className="mb-16 md:mb-20"
         >
-          <span className={`inline-block text-sm font-mono tracking-widest uppercase mb-4
-            ${isDark ? 'text-coral' : 'text-coral-dark'}`}>
+          <span className="inline-block text-sm font-mono tracking-widest uppercase mb-4 text-coral-dark">
             Nos services
           </span>
-          <h2 className={`font-display text-2xl-fluid max-w-2xl
-            ${isDark ? 'text-stone' : 'text-ink'}`}>
-            Solutions complètes pour votre pratique
+          <h2 className="font-display text-2xl-fluid max-w-2xl text-ink">
+            Solutions compl\u00e8tes pour votre pratique
           </h2>
         </motion.div>
 
@@ -58,11 +56,7 @@ export default function Services({ theme }) {
               </AnimatePresence>
 
               {/* Overlay gradient */}
-              <div className={`absolute inset-0 ${
-                isDark
-                  ? 'bg-gradient-to-t from-ink via-ink/20 to-transparent'
-                  : 'bg-gradient-to-t from-stone via-stone/20 to-transparent'
-              }`} />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone via-stone/20 to-transparent" />
 
               {/* Service title overlay */}
               <AnimatePresence mode="wait">
@@ -74,28 +68,22 @@ export default function Services({ theme }) {
                   transition={{ duration: 0.4 }}
                   className="absolute bottom-0 left-0 right-0 p-8 md:p-10"
                 >
-                  <span className={`text-sm font-mono mb-2 block ${
-                    isDark ? 'text-coral' : 'text-coral'
-                  }`}>
+                  <span className="text-sm font-mono mb-2 block text-coral">
                     0{activeService + 1} / 0{services.length}
                   </span>
-                  <h3 className={`font-display text-xl-fluid mb-3 ${
-                    isDark ? 'text-stone' : 'text-ink'
-                  }`}>
+                  <h3 className="font-display text-xl-fluid mb-3 text-ink">
                     {currentService.title}
                   </h3>
-                  <p className={`max-w-md mb-6 ${
-                    isDark ? 'text-stone/70' : 'text-ink/70'
-                  }`}>
+                  <p className="max-w-md mb-6 text-ink/70">
                     {currentService.description}
                   </p>
-                  <a
-                    href={currentService.link}
+                  <Link
+                    to={currentService.link}
                     className="inline-flex items-center gap-2 text-coral hover:gap-3 transition-all duration-300 font-medium"
                   >
-                    Découvrir
+                    D\u00e9couvrir
                     <ArrowRight className="w-4 h-4" />
-                  </a>
+                  </Link>
                 </motion.div>
               </AnimatePresence>
             </div>
@@ -109,7 +97,7 @@ export default function Services({ theme }) {
                   className={`h-1 transition-all duration-500 ${
                     index === activeService
                       ? 'w-12 bg-coral'
-                      : `w-6 ${isDark ? 'bg-white/20 hover:bg-white/30' : 'bg-ink/20 hover:bg-ink/30'}`
+                      : 'w-6 bg-ink/20 hover:bg-ink/30'
                   }`}
                   aria-label={`Service ${index + 1}`}
                 />
@@ -131,27 +119,19 @@ export default function Services({ theme }) {
                   onClick={() => setActiveService(index)}
                   className={`w-full text-left p-6 transition-all duration-300 group
                     ${index === activeService
-                      ? isDark
-                        ? 'bg-white/5 border-l-2 border-coral'
-                        : 'bg-ink/5 border-l-2 border-coral'
-                      : isDark
-                        ? 'hover:bg-white/5 border-l-2 border-transparent'
-                        : 'hover:bg-ink/5 border-l-2 border-transparent'
+                      ? 'bg-ink/5 border-l-2 border-coral'
+                      : 'hover:bg-ink/5 border-l-2 border-transparent'
                     }`}
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <span className={`text-sm font-mono block mb-1 ${
-                        isDark ? 'text-stone/40' : 'text-ink/40'
-                      }`}>
+                      <span className="text-sm font-mono block mb-1 text-ink/40">
                         0{index + 1}
                       </span>
                       <h4 className={`font-display text-lg transition-colors duration-200 ${
                         index === activeService
                           ? 'text-coral'
-                          : isDark
-                            ? 'text-stone group-hover:text-coral'
-                            : 'text-ink group-hover:text-coral'
+                          : 'text-ink group-hover:text-coral'
                       }`}>
                         {service.title}
                       </h4>
@@ -160,7 +140,7 @@ export default function Services({ theme }) {
                       ${index === activeService
                         ? 'opacity-100 text-coral'
                         : 'opacity-0 group-hover:opacity-100'
-                      } ${isDark ? 'text-stone' : 'text-ink'}`}
+                      } text-ink`}
                     />
                   </div>
                 </button>
@@ -168,14 +148,16 @@ export default function Services({ theme }) {
             </div>
 
             {/* View all services link */}
-            <div className={`mt-8 pt-8 border-t ${isDark ? 'border-white/5' : 'border-ink/5'}`}>
-              <a
-                href="/fr/services"
-                className="btn-secondary w-full justify-center active:scale-95 transition-transform"
+            <div className="mt-8 pt-8 border-t border-ink/5">
+              <Link
+                to="/fr/services"
+                className="inline-flex items-center gap-2 px-6 py-4 w-full justify-center
+                  border border-ink/20 text-ink hover:bg-ink hover:text-stone
+                  transition-all duration-300 font-medium active:scale-95"
               >
                 Voir tous nos services
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>

@@ -3,11 +3,10 @@ import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react'
 import { testimonials } from '../data/testimonials'
 
-export default function Testimonials({ theme }) {
+export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const isDark = theme === 'dark'
 
   const next = () => setActiveIndex((prev) => (prev + 1) % testimonials.length)
   const prev = () => setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
@@ -17,7 +16,7 @@ export default function Testimonials({ theme }) {
   return (
     <section
       ref={ref}
-      className={`section-padding overflow-hidden ${isDark ? 'bg-ink-light' : 'bg-white'}`}
+      className="section-padding overflow-hidden bg-white"
     >
       <div className="container-custom">
         {/* Section header */}
@@ -27,11 +26,10 @@ export default function Testimonials({ theme }) {
           transition={{ duration: 0.6 }}
           className="text-center mb-16 md:mb-20"
         >
-          <span className={`inline-block text-sm font-mono tracking-widest uppercase mb-4
-            ${isDark ? 'text-coral' : 'text-coral-dark'}`}>
-            Témoignages
+          <span className="inline-block text-sm font-mono tracking-widest uppercase mb-4 text-coral-dark">
+            T\u00e9moignages
           </span>
-          <h2 className={`font-display text-2xl-fluid ${isDark ? 'text-stone' : 'text-ink'}`}>
+          <h2 className="font-display text-2xl-fluid text-ink">
             Les dentistes nous font confiance
           </h2>
         </motion.div>
@@ -44,12 +42,8 @@ export default function Testimonials({ theme }) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            {/* Quote icon */}
-            <Quote className={`absolute -top-8 -left-4 md:-left-12 w-16 h-16 md:w-24 md:h-24
-              ${isDark ? 'text-coral/10' : 'text-coral/10'}`}
-            />
+            <Quote className="absolute -top-8 -left-4 md:-left-12 w-16 h-16 md:w-24 md:h-24 text-coral/10" />
 
-            {/* Main quote */}
             <AnimatePresence mode="wait">
               <motion.blockquote
                 key={activeIndex}
@@ -59,37 +53,25 @@ export default function Testimonials({ theme }) {
                 transition={{ duration: 0.4 }}
                 className="relative z-10"
               >
-                <p className={`font-display text-xl-fluid md:text-2xl-fluid text-center leading-relaxed mb-10
-                  ${isDark ? 'text-stone' : 'text-ink'}`}>
+                <p className="font-display text-xl-fluid md:text-2xl-fluid text-center leading-relaxed mb-10 text-ink">
                   "{currentTestimonial.quote}"
                 </p>
 
-                {/* Author info */}
                 <div className="flex flex-col items-center">
-                  {/* Avatar placeholder */}
-                  <div className={`w-16 h-16 rounded-full mb-4 flex items-center justify-center
-                    text-2xl font-display ${
-                      isDark ? 'bg-coral/20 text-coral' : 'bg-coral/10 text-coral-dark'
-                    }`}
-                  >
+                  <div className="w-16 h-16 rounded-full mb-4 flex items-center justify-center
+                    text-2xl font-display bg-coral/10 text-coral-dark">
                     {currentTestimonial.name.split(' ').map(n => n[0]).join('')}
                   </div>
 
-                  {/* Name & clinic */}
                   <div className="text-center">
-                    <div className={`font-medium text-lg mb-1 ${
-                      isDark ? 'text-stone' : 'text-ink'
-                    }`}>
+                    <div className="font-medium text-lg mb-1 text-ink">
                       {currentTestimonial.name}
                     </div>
-                    <div className={`text-sm font-mono ${
-                      isDark ? 'text-stone/50' : 'text-ink/50'
-                    }`}>
+                    <div className="text-sm font-mono text-ink/50">
                       {currentTestimonial.clinic}
                     </div>
                   </div>
 
-                  {/* Rating */}
                   <div className="flex gap-1 mt-4">
                     {[...Array(currentTestimonial.rating)].map((_, i) => (
                       <Star
@@ -106,17 +88,12 @@ export default function Testimonials({ theme }) {
             <div className="flex items-center justify-center gap-4 mt-12">
               <button
                 onClick={prev}
-                className={`p-3 transition-all duration-200 ${
-                  isDark
-                    ? 'bg-white/5 hover:bg-white/10 text-stone'
-                    : 'bg-ink/5 hover:bg-ink/10 text-ink'
-                }`}
-                aria-label="Précédent"
+                className="p-3 transition-all duration-200 bg-ink/5 hover:bg-ink/10 text-ink"
+                aria-label="Pr\u00e9c\u00e9dent"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
 
-              {/* Dots */}
               <div className="flex gap-2">
                 {testimonials.map((_, index) => (
                   <button
@@ -125,22 +102,16 @@ export default function Testimonials({ theme }) {
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${
                       index === activeIndex
                         ? 'w-6 bg-coral'
-                        : isDark
-                          ? 'bg-white/20 hover:bg-white/40'
-                          : 'bg-ink/20 hover:bg-ink/40'
+                        : 'bg-ink/20 hover:bg-ink/40'
                     }`}
-                    aria-label={`Témoignage ${index + 1}`}
+                    aria-label={`T\u00e9moignage ${index + 1}`}
                   />
                 ))}
               </div>
 
               <button
                 onClick={next}
-                className={`p-3 transition-all duration-200 ${
-                  isDark
-                    ? 'bg-white/5 hover:bg-white/10 text-stone'
-                    : 'bg-ink/5 hover:bg-ink/10 text-ink'
-                }`}
+                className="p-3 transition-all duration-200 bg-ink/5 hover:bg-ink/10 text-ink"
                 aria-label="Suivant"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -149,31 +120,27 @@ export default function Testimonials({ theme }) {
           </motion.div>
         </div>
 
-        {/* Trust stat */}
+        {/* Trust stats */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className={`text-center mt-16 pt-12 border-t ${
-            isDark ? 'border-white/5' : 'border-ink/5'
-          }`}
+          className="text-center mt-16 pt-12 border-t border-ink/5"
         >
-          <div className={`inline-flex flex-col md:flex-row items-center gap-6 md:gap-8 ${
-            isDark ? 'text-stone/50' : 'text-ink/50'
-          }`}>
+          <div className="inline-flex flex-col md:flex-row items-center gap-6 md:gap-8 text-ink/50">
             <div className="text-center">
-              <div className="text-3xl font-display text-coral">500+</div>
-              <div className="text-xs font-mono uppercase tracking-wide">Dentistes partenaires</div>
+              <div className="text-3xl font-display text-coral">Laval, QC</div>
+              <div className="text-xs font-mono uppercase tracking-wide">Fabriqu\u00e9 au Qu\u00e9bec</div>
             </div>
-            <div className={`hidden md:block w-px h-12 ${isDark ? 'bg-white/10' : 'bg-ink/10'}`} />
+            <div className="hidden md:block w-px h-12 bg-ink/10" />
             <div className="text-center">
-              <div className="text-3xl font-display text-coral">99.8%</div>
-              <div className="text-xs font-mono uppercase tracking-wide">Taux de satisfaction</div>
+              <div className="text-3xl font-display text-coral">Sur place</div>
+              <div className="text-xs font-mono uppercase tracking-wide">Assistance en clinique</div>
             </div>
-            <div className={`hidden md:block w-px h-12 ${isDark ? 'bg-white/10' : 'bg-ink/10'}`} />
+            <div className="hidden md:block w-px h-12 bg-ink/10" />
             <div className="text-center">
-              <div className="text-3xl font-display text-coral">25+</div>
-              <div className="text-xs font-mono uppercase tracking-wide">Années d'expérience</div>
+              <div className="text-3xl font-display text-coral">2007</div>
+              <div className="text-xs font-mono uppercase tracking-wide">Ann\u00e9e de fondation</div>
             </div>
           </div>
         </motion.div>

@@ -83,11 +83,6 @@ body {
   font-family: var(--font-body);
   font-feature-settings: 'ss01', 'ss02';
   margin: 0;
-  background-color: var(--color-ink);
-  color: var(--color-stone);
-}
-
-body.light {
   background-color: var(--color-stone);
   color: var(--color-ink);
 }
@@ -95,6 +90,12 @@ body.light {
 ::selection {
   background-color: var(--color-coral-light);
   color: var(--color-ink);
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 2px;
 }
 
 /* Custom components */
@@ -160,32 +161,21 @@ body.light {
     justify-content: center;
     gap: 0.5rem;
     padding: 1rem 2rem;
-    border: 1px solid rgb(250 251 252 / 0.3);
-    color: var(--color-stone);
+    border: 1px solid rgb(58 29 23 / 0.3);
+    color: var(--color-ink);
     font-weight: 500;
     border-radius: 0;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .btn-secondary:hover {
-    background-color: var(--color-stone);
-    color: var(--color-ink);
-    border-color: var(--color-stone);
+    background-color: var(--color-ink);
+    color: var(--color-stone);
+    border-color: var(--color-ink);
   }
 
   .btn-secondary:active {
     transform: scale(0.98);
-  }
-
-  .light .btn-secondary {
-    border-color: rgb(58 29 23 / 0.3);
-    color: var(--color-ink);
-  }
-
-  .light .btn-secondary:hover {
-    background-color: var(--color-ink);
-    color: var(--color-stone);
-    border-color: var(--color-ink);
   }
 
   /* Section padding */
@@ -220,15 +210,15 @@ body.light {
 
   /* Glass card effect */
   .glass-card {
-    background-color: rgb(58 29 23 / 0.5);
+    background-color: rgb(255 255 255 / 0.7);
     backdrop-filter: blur(24px);
-    border: 1px solid rgb(255 255 255 / 0.05);
+    border: 1px solid rgb(58 29 23 / 0.05);
     border-radius: 2px;
   }
 
-  .light .glass-card {
-    background-color: rgb(255 255 255 / 0.7);
-    border-color: rgb(58 29 23 / 0.05);
+  /* Safe area for mobile CTA bar */
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 }
 
@@ -305,5 +295,10 @@ body.light {
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  /* Scroll margin for anchor links with fixed header */
+  .scroll-mt-24 {
+    scroll-margin-top: 6rem;
   }
 }

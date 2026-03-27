@@ -1,46 +1,44 @@
-import { motion } from 'framer-motion'
-import { MapPin, Phone, Mail, Clock, ExternalLink } from 'lucide-react'
+import { MapPin, Phone, Clock, ExternalLink } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { contactInfo } from '../data/contact'
 
 const quickLinks = [
   { name: "Accueil", href: "/" },
   { name: "Produits", href: "/fr/produits" },
   { name: "Services", href: "/fr/services" },
-  { name: "À propos", href: "/fr/a-propos" },
+  { name: "\u00c0 propos", href: "/fr/a-propos" },
   { name: "Nous joindre", href: "/fr/contact" }
 ]
 
 const products = [
   { name: "Implants", href: "/fr/produits/implants" },
   { name: "Couronnes et ponts", href: "/fr/produits/couronnes-et-ponts" },
-  { name: "Autres produits", href: "/fr/produits/autres" },
-  { name: "Cas de réhabilitation", href: "/fr/produits/cas-de-rehabilitation" }
+  { name: "Autres produits", href: "/fr/produits/autres-produits" }
 ]
 
-export default function Footer({ theme }) {
-  const isDark = theme === 'dark'
+export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className={`${isDark ? 'bg-ink-lighter' : 'bg-ink'} text-stone border-t border-coral-light/15`}>
+    <footer className="bg-ink text-stone border-t border-coral-light/15 pb-16 md:pb-0">
       {/* Main footer */}
       <div className="container-custom py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <a href="/" className="inline-block mb-6">
+            <Link to="/" className="inline-block mb-6">
               <img
                 src="/logo-white.png"
                 alt="AIDE Lab"
                 className="h-10"
               />
-            </a>
+            </Link>
             <p className="text-stone/60 text-sm leading-relaxed mb-6">
-              Nos experts ne cessent de surveiller les actualités du domaine
+              Nos experts ne cessent de surveiller les actualit\u00e9s du domaine
               en plus de suivre plusieurs formations par an afin d'introduire
               les nouvelles technologies dans leurs processus.
             </p>
 
-            {/* Social icons placeholder */}
             <div className="flex gap-3">
               {['facebook', 'linkedin', 'instagram'].map((social) => (
                 <a
@@ -65,12 +63,12 @@ export default function Footer({ theme }) {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-stone/70 hover:text-coral transition-colors duration-200 link-underline py-1.5 inline-block"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -84,12 +82,12 @@ export default function Footer({ theme }) {
             <ul className="space-y-2">
               {products.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-stone/70 hover:text-coral transition-colors duration-200 link-underline py-1.5 inline-block"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -103,7 +101,7 @@ export default function Footer({ theme }) {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="https://www.google.ca/maps/place/4080+Boul+le+Corbusier,+Laval,+QC+H7L+4S8"
+                  href={contactInfo.address.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 text-stone/70 hover:text-coral
@@ -111,9 +109,9 @@ export default function Footer({ theme }) {
                 >
                   <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
                   <span>
-                    4080 boulevard Le Corbusier
+                    {contactInfo.address.street}
                     <br />
-                    Laval, Qc H7L 5R2
+                    {contactInfo.address.city}, {contactInfo.address.province}
                     <ExternalLink className="w-3 h-3 inline ml-2 opacity-0 group-hover:opacity-100
                       transition-opacity" />
                   </span>
@@ -121,27 +119,27 @@ export default function Footer({ theme }) {
               </li>
               <li>
                 <a
-                  href="tel:1-888-350-2246"
+                  href={contactInfo.phones.tollFree.href}
                   className="flex items-center gap-3 text-stone/70 hover:text-coral
                     transition-colors duration-200"
                 >
                   <Phone className="w-4 h-4 flex-shrink-0" />
-                  <span>1 (888) 350-2246</span>
+                  <span>{contactInfo.phones.tollFree.number}</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:450-937-5191"
+                  href={contactInfo.phones.local.href}
                   className="flex items-center gap-3 text-stone/70 hover:text-coral
                     transition-colors duration-200"
                 >
                   <Phone className="w-4 h-4 flex-shrink-0" />
-                  <span>(450) 937-5191</span>
+                  <span>{contactInfo.phones.local.number}</span>
                 </a>
               </li>
               <li className="flex items-center gap-3 text-stone/70">
                 <Clock className="w-4 h-4 flex-shrink-0" />
-                <span>Lun - Ven: 8h - 17h</span>
+                <span>{contactInfo.hours}</span>
               </li>
             </ul>
           </div>
@@ -153,14 +151,12 @@ export default function Footer({ theme }) {
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-stone/40 text-sm">
-              © {currentYear} Laboratoire AIDE. Tous droits réservés.
+              \u00a9 2007\u2013{currentYear} Laboratoire Dentaire AIDE. Tous droits r\u00e9serv\u00e9s.
             </p>
             <div className="flex items-center gap-4 md:gap-6 text-sm text-stone/40">
               <a href="#" className="hover:text-coral transition-colors py-1">
-                Politique de confidentialité
+                Politique de confidentialit\u00e9
               </a>
-              <span className="hidden sm:inline">·</span>
-              <span className="font-mono py-1">FR / EN</span>
             </div>
           </div>
         </div>
