@@ -25,21 +25,21 @@ function HistorySection() {
               NOTRE HISTOIRE
             </span>
             <h2 className="font-display text-xl-fluid text-ink mb-6">
-              AIDE: Accompagner, Innover, D\u00e9velopper, Exceller
+              AIDE: Accompagner, Innover, Développer, Exceller
             </h2>
             <p className="text-ink/70 leading-relaxed mb-4">
-              Fond\u00e9 en 2007 \u00e0 Laval par Michel Arab T.D. et Maher Karo T.D., le Laboratoire Dentaire AIDE
-              est n\u00e9 d'une vision commune: cr\u00e9er un laboratoire o\u00f9 l'expertise artisanale rencontre les technologies
+              Fondé en 2007 à Laval par Michel Arab T.D. et Maher Karo T.D., le Laboratoire Dentaire AIDE
+              est né d'une vision commune: créer un laboratoire où l'expertise artisanale rencontre les technologies
               de pointe.
             </p>
             <p className="text-ink/70 leading-relaxed mb-4">
-              D\u00e8s le d\u00e9part, les fondateurs ont mis l'accent sur un service que peu de laboratoires offrent:
-              l'assistance sur place. Nos techniciens se d\u00e9placent directement dans les cliniques pour accompagner
+              Dès le départ, les fondateurs ont mis l'accent sur un service que peu de laboratoires offrent:
+              l'assistance sur place. Nos techniciens se déplacent directement dans les cliniques pour accompagner
               les dentistes lors de cas complexes.
             </p>
             <p className="text-ink/70 leading-relaxed">
-              Pr\u00e8s de 20 ans plus tard, cette philosophie reste au coeur de tout ce que nous faisons.
-              Chaque pi\u00e8ce fabriqu\u00e9e porte la marque de notre engagement envers l'excellence.
+              Près de 20 ans plus tard, cette philosophie reste au coeur de tout ce que nous faisons.
+              Chaque pièce fabriquée porte la marque de notre engagement envers l'excellence.
             </p>
           </motion.div>
           <motion.div
@@ -49,8 +49,8 @@ function HistorySection() {
           >
             {/* TODO: Replace with real lab photo */}
             <img
-              src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&h=600&fit=crop"
-              alt="Laboratoire dentaire AIDE \u00e0 Laval"
+              src="https://images.unsplash.com/photo-1633197551882-b5e2416c9310?w=800&h=600&fit=crop"
+              alt="Technicien au microscope au laboratoire dentaire AIDE"
               loading="lazy"
               width={800}
               height={600}
@@ -115,8 +115,8 @@ function FoundersSection() {
     <section ref={ref} className="section-padding bg-stone">
       <div className="container-custom">
         <SectionHeader
-          eyebrow="L'\u00e9quipe fondatrice"
-          title="Les visages derri\u00e8re AIDE Lab"
+          eyebrow="L'équipe fondatrice"
+          title="Les visages derrière AIDE Lab"
           inView={isInView}
         />
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -152,8 +152,8 @@ function EquipmentSection() {
     <section ref={ref} className="section-padding bg-white">
       <div className="container-custom">
         <SectionHeader
-          eyebrow="Nos \u00e9quipements"
-          title="Technologies de pointe au service de la pr\u00e9cision"
+          eyebrow="Nos équipements"
+          title="Technologies de pointe au service de la précision"
           inView={isInView}
         />
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
@@ -220,16 +220,16 @@ function ValuesSection() {
 
 export default function AProposPage() {
   useDocumentMeta({
-    title: '\u00c0 propos',
-    description: 'Fond\u00e9 en 2007 \u00e0 Laval par Michel Arab T.D. et Maher Karo T.D. Pr\u00e8s de 20 ans d\'expertise en laboratoire dentaire.'
+    title: 'À propos',
+    description: 'Fondé en 2007 à Laval par Michel Arab T.D. et Maher Karo T.D. Près de 20 ans d\'expertise en laboratoire dentaire.'
   })
 
   return (
     <>
       <PageHero
-        eyebrow="\u00c0 PROPOS"
-        title="Pr\u00e8s de 20 ans d'expertise dentaire \u00e0 Laval"
-        subtitle="Un laboratoire fond\u00e9 sur l'excellence, l'innovation et le service personnalis\u00e9."
+        eyebrow="À PROPOS"
+        title="Près de 20 ans d'expertise dentaire à Laval"
+        subtitle="Un laboratoire fondé sur l'excellence, l'innovation et le service personnalisé."
       />
       <HistorySection />
       <TimelineSection />
@@ -239,7 +239,7 @@ export default function AProposPage() {
       <VirtualTour />
       <CTASection
         headline="Envie de travailler avec nous?"
-        description="D\u00e9couvrez comment AIDE Lab peut devenir votre partenaire de confiance."
+        description="Découvrez comment AIDE Lab peut devenir votre partenaire de confiance."
         primaryAction={{ label: "Nous joindre", href: "/fr/contact" }}
         secondaryAction={{ label: "1 (888) 350-2246", href: "tel:1-888-350-2246" }}
       />

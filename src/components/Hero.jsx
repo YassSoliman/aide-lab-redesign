@@ -133,8 +133,8 @@ export default function Hero() {
                 className="relative overflow-hidden"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&h=400&fit=crop"
-                  alt="Travail de précision au laboratoire dentaire AIDE"
+                  src="https://images.unsplash.com/photo-1771442873035-474765b40ac6?w=600&h=400&fit=crop"
+                  alt="Implant dentaire et couronne de précision AIDE Lab"
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone/60 via-transparent to-transparent" />

@@ -11,38 +11,38 @@ import { Shield, MapPin, Search, Clock } from 'lucide-react'
 const productCards = [
   {
     title: "Implants",
-    description: "Proth\u00e8ses fixes, piliers personnalis\u00e9s, barres et guides chirurgicaux. Compatibles avec tous les syst\u00e8mes majeurs.",
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop",
+    description: "Prothèses fixes, piliers personnalisés, barres et guides chirurgicaux. Compatibles avec tous les systèmes majeurs.",
+    image: "https://images.unsplash.com/photo-1771442873035-474765b40ac6?w=800&h=600&fit=crop",
     imageAlt: "Solutions d'implants dentaires AIDE Lab",
     link: "/fr/produits/implants"
   },
   {
     title: "Couronnes et ponts",
-    description: "C\u00e9ramique, zircone et e.max. Choix de couleurs sur place dans notre salle d\u00e9di\u00e9e.",
-    image: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&h=600&fit=crop",
-    imageAlt: "Couronnes et ponts dentaires de pr\u00e9cision",
+    description: "Céramique, zircone et e.max. Choix de couleurs sur place dans notre salle dédiée.",
+    image: "https://images.unsplash.com/photo-1562330743-fbc6ef07ca78?w=800&h=600&fit=crop",
+    imageAlt: "Couronnes et ponts dentaires de précision",
     link: "/fr/produits/couronnes-et-ponts"
   },
   {
     title: "Autres produits",
     description: "Cirage diagnostique, couronnes temporaires et protecteurs buccaux sur mesure.",
-    image: "https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&h=600&fit=crop",
-    imageAlt: "Produits dentaires compl\u00e9mentaires",
+    image: "https://images.unsplash.com/photo-1653667767792-9b057ef090fc?w=800&h=600&fit=crop",
+    imageAlt: "Produits dentaires complémentaires",
     link: "/fr/produits/autres-produits"
   }
 ]
 
 const trustPillars = [
-  { icon: Shield, title: "Compatibilit\u00e9 universelle", description: "Compatible avec Nobel Biocare, Straumann, Dental Wings et plus." },
-  { icon: MapPin, title: "Fabriqu\u00e9 au Qu\u00e9bec", description: "Toute la production dans notre laboratoire \u00e0 Laval." },
-  { icon: Search, title: "Contr\u00f4le qualit\u00e9", description: "Chaque pi\u00e8ce inspect\u00e9e avant livraison." },
-  { icon: Clock, title: "D\u00e9lais rapides", description: "Respect des \u00e9ch\u00e9anciers pour chaque commande." }
+  { icon: Shield, title: "Compatibilité universelle", description: "Compatible avec Nobel Biocare, Straumann, Dental Wings et plus." },
+  { icon: MapPin, title: "Fabriqué au Québec", description: "Toute la production dans notre laboratoire à Laval." },
+  { icon: Search, title: "Contrôle qualité", description: "Chaque pièce inspectée avant livraison." },
+  { icon: Clock, title: "Délais rapides", description: "Respect des échéanciers pour chaque commande." }
 ]
 
 export default function ProduitsLanding() {
   useDocumentMeta({
     title: 'Produits',
-    description: 'D\u00e9couvrez nos implants, couronnes, ponts et produits dentaires fabriqu\u00e9s avec pr\u00e9cision \u00e0 Laval, QC.'
+    description: 'Découvrez nos implants, couronnes, ponts et produits dentaires fabriqués avec précision à Laval, QC.'
   })
 
   const trustRef = useRef(null)
@@ -54,8 +54,8 @@ export default function ProduitsLanding() {
     <>
       <PageHero
         eyebrow="NOS PRODUITS"
-        title="Des solutions dentaires de pr\u00e9cision"
-        subtitle="D\u00e9couvrez notre gamme compl\u00e8te de produits fabriqu\u00e9s avec soin dans notre laboratoire \u00e0 Laval."
+        title="Des solutions dentaires de précision"
+        subtitle="Découvrez notre gamme complète de produits fabriqués avec soin dans notre laboratoire à Laval."
       />
 
       {/* Product cards grid */}
@@ -73,7 +73,7 @@ export default function ProduitsLanding() {
       <section ref={trustRef} className="section-padding bg-white">
         <div className="container-custom">
           <SectionHeader
-            eyebrow="Qualit\u00e9 certifi\u00e9e"
+            eyebrow="Qualité certifiée"
             title="Pourquoi choisir nos produits?"
             inView={trustInView}
           />
@@ -102,8 +102,8 @@ export default function ProduitsLanding() {
       </section>
 
       <CTASection
-        headline="Besoin d'un produit sp\u00e9cifique?"
-        description="Contactez-nous pour discuter de vos besoins et obtenir une soumission personnalis\u00e9e."
+        headline="Besoin d'un produit spécifique?"
+        description="Contactez-nous pour discuter de vos besoins et obtenir une soumission personnalisée."
         primaryAction={{ label: "Nous joindre", href: "/fr/contact" }}
         secondaryAction={{ label: "1 (888) 350-2246", href: "tel:1-888-350-2246" }}
       />
