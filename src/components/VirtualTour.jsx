@@ -2,7 +2,7 @@ import { useState, useRef } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { Play, X, Maximize2 } from 'lucide-react'
 
-const VIRTUAL_TOUR_ENABLED = true
+const VIRTUAL_TOUR_ENABLED = false
 
 export default function VirtualTour() {
   const [isExpanded, setIsExpanded] = useState(false)
@@ -53,7 +53,7 @@ export default function VirtualTour() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <span className="inline-block text-sm font-mono tracking-widest uppercase mb-6 text-coral-dark">
-                Visite immersive 360\u00b0
+                Visite immersive 360°
               </span>
 
               <h2 className="font-display text-2xl-fluid mb-6 text-ink">
@@ -62,16 +62,16 @@ export default function VirtualTour() {
               </h2>
 
               <p className="text-lg leading-relaxed mb-8 max-w-lg text-ink/70">
-                D\u00e9couvrez nos installations de pointe et voyez o\u00f9 la magie op\u00e8re.
-                Notre laboratoire \u00e0 la fine pointe de la technologie est \u00e9quip\u00e9
-                des meilleurs outils pour garantir des r\u00e9sultats exceptionnels.
+                Découvrez nos installations de pointe et voyez où la magie opère.
+                Notre laboratoire à la fine pointe de la technologie est équipé
+                des meilleurs outils pour garantir des résultats exceptionnels.
               </p>
 
               {/* Stats row */}
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 md:gap-12 mb-10 text-ink/60">
                 <div>
                   <div className="text-3xl font-display text-coral">5,000</div>
-                  <div className="text-sm font-mono">pi\u00b2 d'espace</div>
+                  <div className="text-sm font-mono">pi² d'espace</div>
                 </div>
                 <div>
                   <div className="text-3xl font-display text-coral">12</div>
@@ -88,7 +88,7 @@ export default function VirtualTour() {
                 className="btn-primary group"
               >
                 <Play className="w-5 h-5 transition-transform group-hover:scale-110" />
-                D\u00e9marrer la visite immersive
+                Démarrer la visite immersive
               </button>
             </motion.div>
 
@@ -107,7 +107,7 @@ export default function VirtualTour() {
                   src={tourUrl}
                   className="w-full h-full"
                   style={{ border: 'none' }}
-                  title="Visite virtuelle AIDE Lab - Aper\u00e7u"
+                  title="Visite virtuelle AIDE Lab - Aperçu"
                   loading="lazy"
                 />
 
@@ -117,7 +117,7 @@ export default function VirtualTour() {
                 <button
                   onClick={(e) => { e.stopPropagation(); setIsExpanded(true) }}
                   className="absolute inset-0 flex items-center justify-center"
-                  aria-label="Ouvrir la visite en plein \u00e9cran"
+                  aria-label="Ouvrir la visite en plein écran"
                 >
                   <motion.div
                     whileHover={{ scale: 1.1 }}
@@ -130,7 +130,7 @@ export default function VirtualTour() {
 
                 <div className="absolute top-4 left-4 px-3 py-1.5 text-xs font-mono tracking-wide
                   bg-white/80 text-ink">
-                  360\u00b0 INTERACTIF
+                  360° INTERACTIF
                 </div>
               </div>
 
@@ -138,7 +138,7 @@ export default function VirtualTour() {
               <div className="hidden md:block absolute -bottom-3 -right-3 w-12 h-12 border-b-2 border-r-2 border-coral" />
 
               <p className="mt-6 text-center text-sm font-mono text-ink/50">
-                Cliquez pour une exp\u00e9rience plein \u00e9cran
+                Cliquez pour une expérience plein écran
               </p>
             </motion.div>
           </div>
@@ -188,7 +188,7 @@ export default function VirtualTour() {
             <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-ink to-transparent">
               <div className="container-custom flex items-center justify-between">
                 <div className="text-stone/60 text-sm font-mono">
-                  Laboratoire AIDE \u00b7 Laval, Qu\u00e9bec
+                  Laboratoire AIDE · Laval, Québec
                 </div>
                 <button
                   onClick={() => setIsExpanded(false)}

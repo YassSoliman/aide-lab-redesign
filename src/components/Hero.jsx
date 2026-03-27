@@ -3,7 +3,7 @@ import { ArrowRight, MapPin, Calendar, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 export default function Hero() {
-  const titleWords = ["La", "r\u00e9f\u00e9rence", "en", "implants,", "couronnes", "et ponts."]
+  const titleWords = ["La", "référence", "en", "implants,", "couronnes", "et ponts."]
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-stone">
@@ -35,7 +35,7 @@ export default function Hero() {
                 bg-ink/5 text-sage-dark"
             >
               <span className="w-2 h-2 rounded-full bg-coral animate-pulse" />
-              Laboratoire dentaire \u00e0 Laval, QC
+              Laboratoire dentaire à Laval, QC
             </motion.div>
 
             {/* Main headline - word by word animation */}
@@ -50,8 +50,8 @@ export default function Hero() {
                     delay: 0.3 + i * 0.1,
                     ease: [0.16, 1, 0.3, 1]
                   }}
-                  className={`inline-block mr-2 md:mr-4 font-display text-display leading-none text-ink
-                    ${word === 'r\u00e9f\u00e9rence' ? 'text-coral italic' : ''}`}
+                  className={`inline-block mr-2 md:mr-3 font-display text-2xl-fluid leading-none text-ink
+                    ${word === 'référence' ? 'text-coral italic' : ''}`}
                 >
                   {word}
                 </motion.span>
@@ -65,7 +65,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="text-lg md:text-xl leading-relaxed mb-10 max-w-lg text-ink/70"
             >
-              Implants, couronnes et ponts fabriqu\u00e9s avec pr\u00e9cision au Qu\u00e9bec.
+              Implants, couronnes et ponts fabriqués avec précision au Québec.
               Assistance chirurgicale sur place pour vos cas les plus complexes.
             </motion.p>
 
@@ -102,12 +102,12 @@ export default function Hero() {
                 <Calendar className="w-4 h-4" />
                 <span>Depuis 2007</span>
               </div>
-              <span className="hidden sm:block">\u00b7</span>
+              <span className="hidden sm:block">·</span>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
-                <span>Laval, Qu\u00e9bec</span>
+                <span>Laval, Québec</span>
               </div>
-              <span className="hidden sm:block">\u00b7</span>
+              <span className="hidden sm:block">·</span>
               <div>
                 Des centaines de dentistes partenaires
               </div>
@@ -134,7 +134,7 @@ export default function Hero() {
               >
                 <img
                   src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&h=400&fit=crop"
-                  alt="Travail de pr\u00e9cision au laboratoire dentaire AIDE"
+                  alt="Travail de précision au laboratoire dentaire AIDE"
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone/60 via-transparent to-transparent" />
@@ -149,7 +149,7 @@ export default function Hero() {
               >
                 <div className="text-4xl font-display text-coral mb-1">19</div>
                 <div className="text-sm text-ink/70">
-                  Ann\u00e9es d'expertise
+                  Années d'expertise
                 </div>
               </motion.div>
             </div>
