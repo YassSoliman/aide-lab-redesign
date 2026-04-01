@@ -105,7 +105,7 @@ export default function ProduitsLanding() {
         headline="Besoin d'un produit spécifique?"
         description="Contactez-nous pour discuter de vos besoins et obtenir une soumission personnalisée."
         primaryAction={{ label: "Nous joindre", href: "/fr/contact" }}
-        secondaryAction={{ label: "1 (888) 350-2246", href: "tel:1-888-350-2246" }}
+        secondaryAction={{ label: "(450) 937-5191", href: "tel:450-937-5191" }}
       />
     </>
   )

@@ -4,7 +4,7 @@ export default function StructuredData() {
     "@type": "DentalLaboratory",
     "name": "Laboratoire Dentaire AIDE",
     "url": "https://aidelab.ca",
-    "telephone": "+1-888-350-2246",
+    "telephone": "+1-450-937-5191",
     "foundingDate": "2007",
     "founder": [
       { "@type": "Person", "name": "Michel Arab" },
@@ -21,9 +21,9 @@ export default function StructuredData() {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       "opens": "08:00",
-      "closes": "17:00"
+      "closes": "16:30"
     },
-    "description": "Laboratoire dentaire sp\u00e9cialis\u00e9 en implants, couronnes et ponts. Assistance chirurgicale sur place. Fond\u00e9 en 2007 \u00e0 Laval, QC.",
+    "description": "Laboratoire dentaire spécialisé en implants, couronnes et ponts. Assistance chirurgicale sur place. Fondé en 2007 à Laval, QC.",
     "areaServed": {
       "@type": "GeoCircle",
       "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 45.5887, "longitude": -73.7451 },

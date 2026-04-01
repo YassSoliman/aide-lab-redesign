@@ -241,7 +241,7 @@ export default function AProposPage() {
         headline="Envie de travailler avec nous?"
         description="Découvrez comment AIDE Lab peut devenir votre partenaire de confiance."
         primaryAction={{ label: "Nous joindre", href: "/fr/contact" }}
-        secondaryAction={{ label: "1 (888) 350-2246", href: "tel:1-888-350-2246" }}
+        secondaryAction={{ label: "(450) 937-5191", href: "tel:450-937-5191" }}
       />
     </>
   )

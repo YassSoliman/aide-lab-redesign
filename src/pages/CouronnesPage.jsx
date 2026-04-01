@@ -83,7 +83,7 @@ export default function CouronnesPage() {
         headline="Un cas de couronnes à discuter?"
         description="Contactez-nous pour planifier votre prochain cas ou réserver un rendez-vous pour le choix de couleurs."
         primaryAction={{ label: "Nous joindre", href: "/fr/contact" }}
-        secondaryAction={{ label: "1 (888) 350-2246", href: "tel:1-888-350-2246" }}
+        secondaryAction={{ label: "(450) 937-5191", href: "tel:450-937-5191" }}
       />
     </>
   )

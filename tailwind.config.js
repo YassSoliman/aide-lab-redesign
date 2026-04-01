@@ -20,9 +20,9 @@ export default {
           darker: '#DDE6EE',
         },
         azure: {
-          DEFAULT: '#2B6EA3',
-          light: '#A2C9E9',
-          dark: '#1B5685',
+          DEFAULT: '#6D9CC3',
+          light: '#6D9CC3',
+          dark: '#6D9CC3',
         },
         sage: {
           DEFAULT: '#8B7B73',

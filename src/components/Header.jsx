@@ -108,11 +108,11 @@ export default function Header() {
           {/* Right side - CTA & Mobile menu */}
           <div className="flex items-center gap-4">
             <a
-              href="tel:1-888-350-2246"
+              href="tel:450-937-5191"
               className="flex items-center gap-2 text-sm font-mono text-azure-dark"
             >
               <Phone className="w-4 h-4" />
-              <span className="hidden md:inline">1 (888) 350-2246</span>
+              <span className="hidden md:inline">(450) 937-5191</span>
             </a>
 
             <Link
@@ -177,11 +177,11 @@ export default function Header() {
               ))}
               <div className="pt-4 border-t border-cacao/10">
                 <a
-                  href="tel:1-888-350-2246"
+                  href="tel:450-937-5191"
                   className="flex items-center gap-2 font-mono text-azure-dark"
                 >
                   <Phone className="w-4 h-4" />
-                  1 (888) 350-2246
+                  (450) 937-5191
                 </a>
               </div>
             </div>

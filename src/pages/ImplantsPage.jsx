@@ -61,7 +61,7 @@ export default function ImplantsPage() {
         headline="Discutons de votre prochain cas d'implants"
         description="Notre équipe est prête à vous accompagner pour vos cas les plus complexes."
         primaryAction={{ label: "Nous joindre", href: "/fr/contact" }}
-        secondaryAction={{ label: "1 (888) 350-2246", href: "tel:1-888-350-2246" }}
+        secondaryAction={{ label: "(450) 937-5191", href: "tel:450-937-5191" }}
       />
     </>
   )

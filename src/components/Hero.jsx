@@ -81,13 +81,13 @@ export default function Hero() {
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <a
-                href="tel:1-888-350-2246"
+                href="tel:450-937-5191"
                 className="inline-flex items-center justify-center gap-2 px-6 py-4
                   border border-cacao/20 text-cacao hover:bg-cacao hover:text-stone
                   transition-all duration-300 font-medium"
               >
                 <Phone className="w-5 h-5" />
-                1 (888) 350-2246
+                (450) 937-5191
               </a>
             </motion.div>
 

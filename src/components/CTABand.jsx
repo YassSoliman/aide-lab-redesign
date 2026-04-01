@@ -43,7 +43,7 @@ export default function CTABand() {
             className="flex flex-col sm:flex-row gap-4"
           >
             <a
-              href="tel:1-888-350-2246"
+              href="tel:450-937-5191"
               className="group flex items-center gap-4 px-6 py-4 bg-white text-cacao
                 hover:bg-cacao hover:text-white transition-all duration-300 w-full sm:w-auto active:scale-95"
             >
@@ -52,9 +52,9 @@ export default function CTABand() {
               </div>
               <div>
                 <div className="text-xs font-mono uppercase tracking-wide text-cacao/50 mb-1">
-                  Sans frais
+                  Téléphone
                 </div>
-                <div className="font-medium">1 (888) 350-2246</div>
+                <div className="font-medium">(450) 937-5191</div>
               </div>
             </a>
 

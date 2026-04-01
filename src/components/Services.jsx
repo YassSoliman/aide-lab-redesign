@@ -68,9 +68,6 @@ export default function Services() {
                   transition={{ duration: 0.4 }}
                   className="absolute bottom-0 left-0 right-0 p-8 md:p-10"
                 >
-                  <span className="text-sm font-mono mb-2 block text-azure">
-                    0{activeService + 1} / 0{services.length}
-                  </span>
                   <h3 className="font-display text-xl-fluid mb-3 text-cacao">
                     {currentService.title}
                   </h3>
@@ -125,9 +122,6 @@ export default function Services() {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <span className="text-sm font-mono block mb-1 text-cacao/40">
-                        0{index + 1}
-                      </span>
                       <h4 className={`font-display text-lg transition-colors duration-200 ${
                         index === activeService
                           ? 'text-azure'

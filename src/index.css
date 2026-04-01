@@ -11,9 +11,9 @@
   --color-stone: #FAFBFC;
   --color-stone-dark: #EEF3F8;
   --color-stone-darker: #DDE6EE;
-  --color-azure: #2B6EA3;
-  --color-azure-light: #A2C9E9;
-  --color-azure-dark: #1B5685;
+  --color-azure: #6D9CC3;
+  --color-azure-light: #6D9CC3;
+  --color-azure-dark: #6D9CC3;
   --color-sage: #8B7B73;
   --color-sage-light: #A59E98;
   --color-sage-dark: #6E6058;
@@ -148,7 +148,7 @@ body {
   .btn-primary:hover {
     background-color: var(--color-azure-dark);
     transform: scale(1.02);
-    box-shadow: 0 20px 25px -5px rgb(43 110 163 / 0.25);
+    box-shadow: 0 20px 25px -5px rgb(109 156 195 / 0.25);
   }
 
   .btn-primary:active {

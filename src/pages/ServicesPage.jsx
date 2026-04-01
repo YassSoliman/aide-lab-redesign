@@ -99,7 +99,7 @@ export default function ServicesPage() {
         headline="Prêt à découvrir la différence AIDE?"
         description="Contactez-nous pour discuter de la façon dont nos services peuvent améliorer votre pratique."
         primaryAction={{ label: "Nous joindre", href: "/fr/contact" }}
-        secondaryAction={{ label: "1 (888) 350-2246", href: "tel:1-888-350-2246" }}
+        secondaryAction={{ label: "(450) 937-5191", href: "tel:450-937-5191" }}
       />
     </>
   )

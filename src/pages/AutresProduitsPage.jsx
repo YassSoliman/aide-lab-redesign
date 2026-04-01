@@ -33,7 +33,7 @@ export default function AutresProduitsPage() {
         headline="Besoin d'informations supplémentaires?"
         description="Notre équipe se fera un plaisir de répondre à vos questions."
         primaryAction={{ label: "Nous joindre", href: "/fr/contact" }}
-        secondaryAction={{ label: "1 (888) 350-2246", href: "tel:1-888-350-2246" }}
+        secondaryAction={{ label: "(450) 937-5191", href: "tel:450-937-5191" }}
       />
     </>
   )

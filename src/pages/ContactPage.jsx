@@ -9,7 +9,7 @@ import { contactInfo } from '../data/contact'
 export default function ContactPage() {
   useDocumentMeta({
     title: 'Nous joindre',
-    description: 'Contactez le Laboratoire Dentaire AIDE à Laval. Sans frais: 1 (888) 350-2246. Local: (450) 937-5191. Lun-Ven 8h-17h.'
+    description: 'Contactez le Laboratoire Dentaire AIDE à Laval. Téléphone: (450) 937-5191. Lun-Ven 8h-16h30.'
   })
 
   const formRef = useRef(null)
@@ -66,15 +66,6 @@ export default function ContactPage() {
                     </a>
                   </li>
                   <li>
-                    <a href={contactInfo.phones.tollFree.href} className="flex items-center gap-3 text-cacao/70 hover:text-azure-dark transition-colors">
-                      <Phone className="w-5 h-5 flex-shrink-0" />
-                      <span>
-                        <span className="text-xs font-mono text-cacao/40 block">{contactInfo.phones.tollFree.label}</span>
-                        {contactInfo.phones.tollFree.number}
-                      </span>
-                    </a>
-                  </li>
-                  <li>
                     <a href={contactInfo.phones.local.href} className="flex items-center gap-3 text-cacao/70 hover:text-azure-dark transition-colors">
                       <Phone className="w-5 h-5 flex-shrink-0" />
                       <span>
@@ -108,20 +99,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Full-width map */}
-      <section className="border-t border-cacao/5">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2793.5!2d-73.745!3d45.589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDM1JzIwLjQiTiA3M8KwNDQnNDIuMCJX!5e0!3m2!1sfr!2sca!4v1"
-          width="100%"
-          height="400"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Carte du Laboratoire Dentaire AIDE à Laval"
-        />
-      </section>
-
       {/* Phone CTA */}
       <section ref={phoneRef} className="section-padding bg-white">
         <div className="container-custom text-center">
@@ -134,15 +111,10 @@ export default function ContactPage() {
               Vous préférez appeler?
             </h2>
             <p className="text-cacao/70 mb-8 max-w-md mx-auto">
-              Notre équipe est disponible du lundi au vendredi, de 8h à 17h.
+              Notre équipe est disponible du lundi au vendredi, de 8h à 16h30.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="tel:1-888-350-2246" className="btn-primary">
-                <Phone className="w-5 h-5" />
-                1 (888) 350-2246
-              </a>
-              <a href="tel:450-937-5191" className="inline-flex items-center gap-2 px-6 py-4 border border-cacao/20 text-cacao
-                hover:bg-cacao hover:text-stone transition-all duration-300">
+            <div className="flex items-center justify-center">
+              <a href="tel:450-937-5191" className="btn-primary">
                 <Phone className="w-5 h-5" />
                 (450) 937-5191
               </a>

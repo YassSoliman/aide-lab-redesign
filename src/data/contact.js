@@ -7,9 +7,8 @@ export const contactInfo = {
     mapsUrl: "https://www.google.ca/maps/place/2917+Rue+Joseph-A.-Bombardier,+Laval,+QC"
   },
   phones: {
-    tollFree: { label: "Sans frais", number: "1 (888) 350-2246", href: "tel:1-888-350-2246" },
-    local: { label: "Local", number: "(450) 937-5191", href: "tel:450-937-5191" }
+    local: { label: "Téléphone", number: "(450) 937-5191", href: "tel:450-937-5191" }
   },
-  hours: "Lun - Ven: 8h - 17h",
+  hours: "Lun - Ven: 8h - 16h30",
   foundingYear: 2007
 }

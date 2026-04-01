@@ -48,7 +48,7 @@ export default function CTASection({ headline, description, primaryAction, secon
                 </div>
                 <div>
                   <div className="text-xs font-mono uppercase tracking-wide text-cacao/50 mb-1">
-                    Sans frais
+                    Téléphone
                   </div>
                   <div className="font-medium">{secondaryAction.label}</div>
                 </div>
