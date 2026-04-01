@@ -6,6 +6,7 @@ import PageHero from '../components/PageHero'
 import SectionHeader from '../components/SectionHeader'
 import VirtualTour from '../components/VirtualTour'
 import CTASection from '../components/CTASection'
+import SocialIcons from '../components/SocialIcons'
 import { founders, scanners, timeline, values } from '../data/about'
 
 function HistorySection() {
@@ -236,6 +237,15 @@ export default function AProposPage() {
       <FoundersSection />
       <EquipmentSection />
       <ValuesSection />
+
+      {/* Social media */}
+      <section className="py-12 bg-stone">
+        <div className="container-custom text-center">
+          <h3 className="font-display text-lg text-cacao mb-4">Suivez-nous sur les réseaux</h3>
+          <SocialIcons variant="dark" className="justify-center" />
+        </div>
+      </section>
+
       <VirtualTour />
       <CTASection
         headline="Envie de travailler avec nous?"

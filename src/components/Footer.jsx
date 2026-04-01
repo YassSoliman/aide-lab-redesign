@@ -1,6 +1,7 @@
 import { MapPin, Phone, Clock, ExternalLink } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { contactInfo } from '../data/contact'
+import SocialIcons from './SocialIcons'
 
 const quickLinks = [
   { name: "Accueil", href: "/" },
@@ -39,20 +40,7 @@ export default function Footer() {
               les nouvelles technologies dans leurs processus.
             </p>
 
-            <div className="flex gap-3">
-              {['facebook', 'linkedin', 'instagram'].map((social) => (
-                <a
-                  key={social}
-                  href="#"
-                  className="w-11 h-11 flex items-center justify-center
-                    bg-white/5 hover:bg-azure hover:text-white
-                    transition-all duration-200 active:scale-95"
-                  aria-label={social}
-                >
-                  <span className="text-xs font-mono uppercase">{social[0]}</span>
-                </a>
-              ))}
-            </div>
+            <SocialIcons variant="light" />
           </div>
 
           {/* Quick links */}

@@ -4,6 +4,7 @@ import { MapPin, Phone, Clock, ExternalLink } from 'lucide-react'
 import useDocumentMeta from '../hooks/useDocumentMeta'
 import PageHero from '../components/PageHero'
 import ContactForm from '../components/ContactForm'
+import SocialIcons from '../components/SocialIcons'
 import { contactInfo } from '../data/contact'
 
 export default function ContactPage() {
@@ -79,6 +80,12 @@ export default function ContactPage() {
                     <span>{contactInfo.hours}</span>
                   </li>
                 </ul>
+              </div>
+
+              {/* Social media */}
+              <div className="mt-6">
+                <h3 className="font-display text-lg text-cacao mb-4">Suivez-nous</h3>
+                <SocialIcons variant="dark" />
               </div>
 
               {/* Small map */}
