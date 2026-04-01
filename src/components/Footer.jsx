@@ -119,16 +119,6 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={contactInfo.phones.tollFree.href}
-                  className="flex items-center gap-3 text-stone/70 hover:text-azure
-                    transition-colors duration-200"
-                >
-                  <Phone className="w-4 h-4 flex-shrink-0" />
-                  <span>{contactInfo.phones.tollFree.number}</span>
-                </a>
-              </li>
-              <li>
-                <a
                   href={contactInfo.phones.local.href}
                   className="flex items-center gap-3 text-stone/70 hover:text-azure
                     transition-colors duration-200"
