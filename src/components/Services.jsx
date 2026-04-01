@@ -24,11 +24,11 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="mb-16 md:mb-20"
         >
-          <span className="inline-block text-sm font-mono tracking-widest uppercase mb-4 text-coral-dark">
+          <span className="inline-block text-sm font-mono tracking-widest uppercase mb-4 text-azure-dark">
             Nos services
           </span>
-          <h2 className="font-display text-2xl-fluid max-w-2xl text-ink">
-            Solutions compl\u00e8tes pour votre pratique
+          <h2 className="font-display text-2xl-fluid max-w-2xl text-cacao">
+            Solutions complètes pour votre pratique
           </h2>
         </motion.div>
 
@@ -68,20 +68,20 @@ export default function Services() {
                   transition={{ duration: 0.4 }}
                   className="absolute bottom-0 left-0 right-0 p-8 md:p-10"
                 >
-                  <span className="text-sm font-mono mb-2 block text-coral">
+                  <span className="text-sm font-mono mb-2 block text-azure">
                     0{activeService + 1} / 0{services.length}
                   </span>
-                  <h3 className="font-display text-xl-fluid mb-3 text-ink">
+                  <h3 className="font-display text-xl-fluid mb-3 text-cacao">
                     {currentService.title}
                   </h3>
-                  <p className="max-w-md mb-6 text-ink/70">
+                  <p className="max-w-md mb-6 text-cacao/70">
                     {currentService.description}
                   </p>
                   <Link
                     to={currentService.link}
-                    className="inline-flex items-center gap-2 text-coral hover:gap-3 transition-all duration-300 font-medium"
+                    className="inline-flex items-center gap-2 text-azure hover:gap-3 transition-all duration-300 font-medium"
                   >
-                    D\u00e9couvrir
+                    Découvrir
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </motion.div>
@@ -96,8 +96,8 @@ export default function Services() {
                   onClick={() => setActiveService(index)}
                   className={`h-1 transition-all duration-500 ${
                     index === activeService
-                      ? 'w-12 bg-coral'
-                      : 'w-6 bg-ink/20 hover:bg-ink/30'
+                      ? 'w-12 bg-azure'
+                      : 'w-6 bg-cacao/20 hover:bg-cacao/30'
                   }`}
                   aria-label={`Service ${index + 1}`}
                 />
@@ -119,28 +119,28 @@ export default function Services() {
                   onClick={() => setActiveService(index)}
                   className={`w-full text-left p-6 transition-all duration-300 group
                     ${index === activeService
-                      ? 'bg-ink/5 border-l-2 border-coral'
-                      : 'hover:bg-ink/5 border-l-2 border-transparent'
+                      ? 'bg-cacao/5 border-l-2 border-azure'
+                      : 'hover:bg-cacao/5 border-l-2 border-transparent'
                     }`}
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <span className="text-sm font-mono block mb-1 text-ink/40">
+                      <span className="text-sm font-mono block mb-1 text-cacao/40">
                         0{index + 1}
                       </span>
                       <h4 className={`font-display text-lg transition-colors duration-200 ${
                         index === activeService
-                          ? 'text-coral'
-                          : 'text-ink group-hover:text-coral'
+                          ? 'text-azure'
+                          : 'text-cacao group-hover:text-azure'
                       }`}>
                         {service.title}
                       </h4>
                     </div>
                     <ArrowUpRight className={`w-5 h-5 transition-all duration-300
                       ${index === activeService
-                        ? 'opacity-100 text-coral'
+                        ? 'opacity-100 text-azure'
                         : 'opacity-0 group-hover:opacity-100'
-                      } text-ink`}
+                      } text-cacao`}
                     />
                   </div>
                 </button>
@@ -148,11 +148,11 @@ export default function Services() {
             </div>
 
             {/* View all services link */}
-            <div className="mt-8 pt-8 border-t border-ink/5">
+            <div className="mt-8 pt-8 border-t border-cacao/5">
               <Link
                 to="/fr/services"
                 className="inline-flex items-center gap-2 px-6 py-4 w-full justify-center
-                  border border-ink/20 text-ink hover:bg-ink hover:text-stone
+                  border border-cacao/20 text-cacao hover:bg-cacao hover:text-stone
                   transition-all duration-300 font-medium active:scale-95"
               >
                 Voir tous nos services

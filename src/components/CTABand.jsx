@@ -10,11 +10,11 @@ export default function CTABand() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden bg-ink"
+      className="relative overflow-hidden bg-cacao"
     >
       {/* Decorative elements */}
       <div className="hidden md:block absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-coral-light blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-azure-light blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full bg-white blur-3xl" />
       </div>
 
@@ -27,11 +27,11 @@ export default function CTABand() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-display text-2xl-fluid text-stone mb-4">
-              Pr\u00eat \u00e0 collaborer?
+              Prêt à collaborer?
             </h2>
             <p className="text-stone/70 text-lg max-w-md">
-              Contactez-nous d\u00e8s aujourd'hui pour discuter de vos besoins
-              et d\u00e9couvrir comment nous pouvons vous aider.
+              Contactez-nous dès aujourd'hui pour discuter de vos besoins
+              et découvrir comment nous pouvons vous aider.
             </p>
           </motion.div>
 
@@ -44,14 +44,14 @@ export default function CTABand() {
           >
             <a
               href="tel:1-888-350-2246"
-              className="group flex items-center gap-4 px-6 py-4 bg-white text-ink
-                hover:bg-ink hover:text-white transition-all duration-300 w-full sm:w-auto active:scale-95"
+              className="group flex items-center gap-4 px-6 py-4 bg-white text-cacao
+                hover:bg-cacao hover:text-white transition-all duration-300 w-full sm:w-auto active:scale-95"
             >
-              <div className="p-2 bg-coral-light/20 group-hover:bg-coral-light/30 transition-colors">
-                <Phone className="w-5 h-5 text-coral" />
+              <div className="p-2 bg-azure-light/20 group-hover:bg-azure-light/30 transition-colors">
+                <Phone className="w-5 h-5 text-azure" />
               </div>
               <div>
-                <div className="text-xs font-mono uppercase tracking-wide text-ink/50 mb-1">
+                <div className="text-xs font-mono uppercase tracking-wide text-cacao/50 mb-1">
                   Sans frais
                 </div>
                 <div className="font-medium">1 (888) 350-2246</div>
@@ -61,11 +61,11 @@ export default function CTABand() {
             <Link
               to="/fr/contact"
               className="group flex items-center justify-between gap-4 px-6 py-4
-                bg-coral text-white hover:bg-coral-dark
+                bg-azure text-white hover:bg-azure-dark
                 transition-all duration-300 w-full sm:w-auto active:scale-95"
             >
               <div className="flex items-center gap-4">
-                <div className="p-2 bg-white/10 group-hover:bg-coral/10 transition-colors">
+                <div className="p-2 bg-white/10 group-hover:bg-azure/10 transition-colors">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>

@@ -89,11 +89,11 @@ export default function ProduitsLanding() {
                   className="text-center"
                 >
                   <div className="inline-flex items-center justify-center w-14 h-14 mb-4
-                    bg-ink/5 text-coral-dark">
+                    bg-cacao/5 text-azure-dark">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="font-display text-lg text-ink mb-2">{pillar.title}</h3>
-                  <p className="text-ink/60 text-sm">{pillar.description}</p>
+                  <h3 className="font-display text-lg text-cacao mb-2">{pillar.title}</h3>
+                  <p className="text-cacao/60 text-sm">{pillar.description}</p>
                 </motion.div>
               )
             })}

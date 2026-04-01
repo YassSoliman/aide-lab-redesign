@@ -18,17 +18,17 @@ export default function ProductSection({ title, description, images = [], revers
             transition={{ duration: 0.6 }}
             className={reverse ? 'lg:order-2 lg:direction-ltr' : 'lg:direction-ltr'}
           >
-            <h2 className="font-display text-xl-fluid text-ink mb-6">
+            <h2 className="font-display text-xl-fluid text-cacao mb-6">
               {title}
             </h2>
             {description.split('\n\n').map((paragraph, i) => (
-              <p key={i} className="text-ink/70 leading-relaxed mb-4">
+              <p key={i} className="text-cacao/70 leading-relaxed mb-4">
                 {paragraph}
               </p>
             ))}
             <Link
               to="/fr/contact"
-              className="inline-flex items-center gap-2 mt-4 text-coral-dark hover:gap-3 transition-all duration-300 font-medium"
+              className="inline-flex items-center gap-2 mt-4 text-azure-dark hover:gap-3 transition-all duration-300 font-medium"
             >
               Des questions? Contactez-nous
               <ArrowRight className="w-4 h-4" />

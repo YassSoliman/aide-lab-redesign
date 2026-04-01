@@ -22,22 +22,22 @@ function ServiceBlock({ service, featured = false, reverse = false }) {
             className={reverse ? 'lg:order-2' : ''}
           >
             {featured && (
-              <span className="inline-block text-sm font-mono tracking-widest uppercase mb-4 text-coral-dark">
+              <span className="inline-block text-sm font-mono tracking-widest uppercase mb-4 text-azure-dark">
                 {service.subtitle}
               </span>
             )}
-            <h2 className="font-display text-xl-fluid text-ink mb-4">
+            <h2 className="font-display text-xl-fluid text-cacao mb-4">
               {service.title}
             </h2>
-            <p className="text-ink/70 leading-relaxed mb-6">
+            <p className="text-cacao/70 leading-relaxed mb-6">
               {service.description}
             </p>
             {service.benefits && (
               <ul className="space-y-3 mb-8">
                 {service.benefits.map((benefit, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
-                    <span className="text-ink/70">{benefit}</span>
+                    <CheckCircle className="w-5 h-5 text-azure flex-shrink-0 mt-0.5" />
+                    <span className="text-cacao/70">{benefit}</span>
                   </li>
                 ))}
               </ul>
@@ -75,14 +75,14 @@ function ServiceBlock({ service, featured = false, reverse = false }) {
 export default function ServicesPage() {
   useDocumentMeta({
     title: 'Services dentaires | Assistance sur place',
-    description: 'Assistance chirurgicale sur place, choix de couleurs en salle d\u00e9di\u00e9e et planification 3D. Des services qui vont au-del\u00e0 de la fabrication.'
+    description: 'Assistance chirurgicale sur place, choix de couleurs en salle dédiée et planification 3D. Des services qui vont au-delà de la fabrication.'
   })
 
   return (
     <>
       <PageHero
         eyebrow="NOS SERVICES"
-        title="Au-del\u00e0 de la fabrication, nous vous accompagnons"
+        title="Au-delà de la fabrication, nous vous accompagnons"
         subtitle="Des services exclusifs qui font d'AIDE Lab un partenaire de confiance pour votre pratique."
       />
 
@@ -96,8 +96,8 @@ export default function ServicesPage() {
       ))}
 
       <CTASection
-        headline="Pr\u00eat \u00e0 d\u00e9couvrir la diff\u00e9rence AIDE?"
-        description="Contactez-nous pour discuter de la fa\u00e7on dont nos services peuvent am\u00e9liorer votre pratique."
+        headline="Prêt à découvrir la différence AIDE?"
+        description="Contactez-nous pour discuter de la façon dont nos services peuvent améliorer votre pratique."
         primaryAction={{ label: "Nous joindre", href: "/fr/contact" }}
         secondaryAction={{ label: "1 (888) 350-2246", href: "tel:1-888-350-2246" }}
       />

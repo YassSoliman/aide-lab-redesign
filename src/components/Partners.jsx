@@ -20,10 +20,10 @@ export default function Partners() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <span className="inline-block text-sm font-mono tracking-widest uppercase mb-4 text-ink/50">
+          <span className="inline-block text-sm font-mono tracking-widest uppercase mb-4 text-cacao/50">
             Partenaires de confiance
           </span>
-          <h2 className="font-display text-xl-fluid text-ink">
+          <h2 className="font-display text-xl-fluid text-cacao">
             Nous travaillons avec les meilleurs
           </h2>
         </motion.div>
@@ -57,7 +57,7 @@ export default function Partners() {
                 >
                   {partner.initials}
                 </div>
-                <span className="text-sm font-medium whitespace-nowrap text-ink">
+                <span className="text-sm font-medium whitespace-nowrap text-cacao">
                   {partner.name}
                 </span>
               </div>
@@ -72,7 +72,7 @@ export default function Partners() {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="container-custom mt-12 text-center"
       >
-        <p className="text-sm font-mono text-ink/40">
+        <p className="text-sm font-mono text-cacao/40">
           {partners.length}+ fabricants de premier plan
         </p>
       </motion.div>

@@ -44,18 +44,18 @@ export default function CouronnesPage() {
               animate={highlightInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block text-sm font-mono tracking-widest uppercase mb-4 text-coral-dark">
+              <span className="inline-block text-sm font-mono tracking-widest uppercase mb-4 text-azure-dark">
                 SERVICE EXCLUSIF
               </span>
-              <h2 className="font-display text-xl-fluid text-ink mb-6">
+              <h2 className="font-display text-xl-fluid text-cacao mb-6">
                 Notre salle de choix de couleurs
               </h2>
-              <p className="text-ink/70 leading-relaxed mb-4">
+              <p className="text-cacao/70 leading-relaxed mb-4">
                 Nous avons aménagé un espace dédié équipé d'un éclairage calibré reproduisant les conditions de
                 lumière naturelle. Ce soin apporté à l'environnement permet une correspondance
                 parfaite des teintes avec les dents naturelles de vos patients.
               </p>
-              <p className="text-ink/70 leading-relaxed mb-6">
+              <p className="text-cacao/70 leading-relaxed mb-6">
                 Nos techniciens utilisent les guides de teintes Vita et vous accompagnent dans le processus
                 pour garantir un résultat esthétique optimal. Ce service est offert sur rendez-vous.
               </p>

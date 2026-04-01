@@ -9,7 +9,7 @@ import { contactInfo } from '../data/contact'
 export default function ContactPage() {
   useDocumentMeta({
     title: 'Nous joindre',
-    description: 'Contactez le Laboratoire Dentaire AIDE \u00e0 Laval. Sans frais: 1 (888) 350-2246. Local: (450) 937-5191. Lun-Ven 8h-17h.'
+    description: 'Contactez le Laboratoire Dentaire AIDE à Laval. Sans frais: 1 (888) 350-2246. Local: (450) 937-5191. Lun-Ven 8h-17h.'
   })
 
   const formRef = useRef(null)
@@ -22,7 +22,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="NOUS JOINDRE"
         title="Parlons de votre prochain projet"
-        subtitle="Notre \u00e9quipe vous r\u00e9pondra dans les 24 heures."
+        subtitle="Notre équipe vous répondra dans les 24 heures."
       />
 
       {/* Form + Info */}
@@ -36,7 +36,7 @@ export default function ContactPage() {
               transition={{ duration: 0.5 }}
               className="lg:col-span-3"
             >
-              <h2 className="font-display text-xl-fluid text-ink mb-8">Envoyez-nous un message</h2>
+              <h2 className="font-display text-xl-fluid text-cacao mb-8">Envoyez-nous un message</h2>
               <ContactForm />
             </motion.div>
 
@@ -47,15 +47,15 @@ export default function ContactPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="lg:col-span-2"
             >
-              <div className="bg-white border border-ink/5 p-8">
-                <h3 className="font-display text-lg text-ink mb-6">Coordonn\u00e9es</h3>
+              <div className="bg-white border border-cacao/5 p-8">
+                <h3 className="font-display text-lg text-cacao mb-6">Coordonnées</h3>
                 <ul className="space-y-5">
                   <li>
                     <a
                       href={contactInfo.address.mapsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-start gap-3 text-ink/70 hover:text-coral-dark transition-colors group"
+                      className="flex items-start gap-3 text-cacao/70 hover:text-azure-dark transition-colors group"
                     >
                       <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
                       <span>
@@ -66,24 +66,24 @@ export default function ContactPage() {
                     </a>
                   </li>
                   <li>
-                    <a href={contactInfo.phones.tollFree.href} className="flex items-center gap-3 text-ink/70 hover:text-coral-dark transition-colors">
+                    <a href={contactInfo.phones.tollFree.href} className="flex items-center gap-3 text-cacao/70 hover:text-azure-dark transition-colors">
                       <Phone className="w-5 h-5 flex-shrink-0" />
                       <span>
-                        <span className="text-xs font-mono text-ink/40 block">{contactInfo.phones.tollFree.label}</span>
+                        <span className="text-xs font-mono text-cacao/40 block">{contactInfo.phones.tollFree.label}</span>
                         {contactInfo.phones.tollFree.number}
                       </span>
                     </a>
                   </li>
                   <li>
-                    <a href={contactInfo.phones.local.href} className="flex items-center gap-3 text-ink/70 hover:text-coral-dark transition-colors">
+                    <a href={contactInfo.phones.local.href} className="flex items-center gap-3 text-cacao/70 hover:text-azure-dark transition-colors">
                       <Phone className="w-5 h-5 flex-shrink-0" />
                       <span>
-                        <span className="text-xs font-mono text-ink/40 block">{contactInfo.phones.local.label}</span>
+                        <span className="text-xs font-mono text-cacao/40 block">{contactInfo.phones.local.label}</span>
                         {contactInfo.phones.local.number}
                       </span>
                     </a>
                   </li>
-                  <li className="flex items-center gap-3 text-ink/70">
+                  <li className="flex items-center gap-3 text-cacao/70">
                     <Clock className="w-5 h-5 flex-shrink-0" />
                     <span>{contactInfo.hours}</span>
                   </li>
@@ -91,7 +91,7 @@ export default function ContactPage() {
               </div>
 
               {/* Small map */}
-              <div className="mt-6 overflow-hidden border border-ink/5">
+              <div className="mt-6 overflow-hidden border border-cacao/5">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2793.5!2d-73.745!3d45.589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDM1JzIwLjQiTiA3M8KwNDQnNDIuMCJX!5e0!3m2!1sfr!2sca!4v1"
                   width="100%"
@@ -100,7 +100,7 @@ export default function ContactPage() {
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Emplacement du Laboratoire Dentaire AIDE \u00e0 Laval"
+                  title="Emplacement du Laboratoire Dentaire AIDE à Laval"
                 />
               </div>
             </motion.div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
       </section>
 
       {/* Full-width map */}
-      <section className="border-t border-ink/5">
+      <section className="border-t border-cacao/5">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2793.5!2d-73.745!3d45.589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDM1JzIwLjQiTiA3M8KwNDQnNDIuMCJX!5e0!3m2!1sfr!2sca!4v1"
           width="100%"
@@ -118,7 +118,7 @@ export default function ContactPage() {
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Carte du Laboratoire Dentaire AIDE \u00e0 Laval"
+          title="Carte du Laboratoire Dentaire AIDE à Laval"
         />
       </section>
 
@@ -130,19 +130,19 @@ export default function ContactPage() {
             animate={phoneInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="font-display text-xl-fluid text-ink mb-4">
-              Vous pr\u00e9f\u00e9rez appeler?
+            <h2 className="font-display text-xl-fluid text-cacao mb-4">
+              Vous préférez appeler?
             </h2>
-            <p className="text-ink/70 mb-8 max-w-md mx-auto">
-              Notre \u00e9quipe est disponible du lundi au vendredi, de 8h \u00e0 17h.
+            <p className="text-cacao/70 mb-8 max-w-md mx-auto">
+              Notre équipe est disponible du lundi au vendredi, de 8h à 17h.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a href="tel:1-888-350-2246" className="btn-primary">
                 <Phone className="w-5 h-5" />
                 1 (888) 350-2246
               </a>
-              <a href="tel:450-937-5191" className="inline-flex items-center gap-2 px-6 py-4 border border-ink/20 text-ink
-                hover:bg-ink hover:text-stone transition-all duration-300">
+              <a href="tel:450-937-5191" className="inline-flex items-center gap-2 px-6 py-4 border border-cacao/20 text-cacao
+                hover:bg-cacao hover:text-stone transition-all duration-300">
                 <Phone className="w-5 h-5" />
                 (450) 937-5191
               </a>

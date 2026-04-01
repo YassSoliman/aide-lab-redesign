@@ -6,7 +6,7 @@ const quickLinks = [
   { name: "Accueil", href: "/" },
   { name: "Produits", href: "/fr/produits" },
   { name: "Services", href: "/fr/services" },
-  { name: "\u00c0 propos", href: "/fr/a-propos" },
+  { name: "À propos", href: "/fr/a-propos" },
   { name: "Nous joindre", href: "/fr/contact" }
 ]
 
@@ -20,7 +20,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-ink text-stone border-t border-coral-light/15 pb-16 md:pb-0">
+    <footer className="bg-cacao text-stone border-t border-azure-light/15 pb-16 md:pb-0">
       {/* Main footer */}
       <div className="container-custom py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
@@ -34,7 +34,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-stone/60 text-sm leading-relaxed mb-6">
-              Nos experts ne cessent de surveiller les actualit\u00e9s du domaine
+              Nos experts ne cessent de surveiller les actualités du domaine
               en plus de suivre plusieurs formations par an afin d'introduire
               les nouvelles technologies dans leurs processus.
             </p>
@@ -45,7 +45,7 @@ export default function Footer() {
                   key={social}
                   href="#"
                   className="w-11 h-11 flex items-center justify-center
-                    bg-white/5 hover:bg-coral hover:text-white
+                    bg-white/5 hover:bg-azure hover:text-white
                     transition-all duration-200 active:scale-95"
                   aria-label={social}
                 >
@@ -65,7 +65,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-stone/70 hover:text-coral transition-colors duration-200 link-underline py-1.5 inline-block"
+                    className="text-stone/70 hover:text-azure transition-colors duration-200 link-underline py-1.5 inline-block"
                   >
                     {link.name}
                   </Link>
@@ -84,7 +84,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-stone/70 hover:text-coral transition-colors duration-200 link-underline py-1.5 inline-block"
+                    className="text-stone/70 hover:text-azure transition-colors duration-200 link-underline py-1.5 inline-block"
                   >
                     {link.name}
                   </Link>
@@ -104,7 +104,7 @@ export default function Footer() {
                   href={contactInfo.address.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 text-stone/70 hover:text-coral
+                  className="flex items-start gap-3 text-stone/70 hover:text-azure
                     transition-colors duration-200 group"
                 >
                   <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
@@ -120,7 +120,7 @@ export default function Footer() {
               <li>
                 <a
                   href={contactInfo.phones.tollFree.href}
-                  className="flex items-center gap-3 text-stone/70 hover:text-coral
+                  className="flex items-center gap-3 text-stone/70 hover:text-azure
                     transition-colors duration-200"
                 >
                   <Phone className="w-4 h-4 flex-shrink-0" />
@@ -130,7 +130,7 @@ export default function Footer() {
               <li>
                 <a
                   href={contactInfo.phones.local.href}
-                  className="flex items-center gap-3 text-stone/70 hover:text-coral
+                  className="flex items-center gap-3 text-stone/70 hover:text-azure
                     transition-colors duration-200"
                 >
                   <Phone className="w-4 h-4 flex-shrink-0" />
@@ -151,11 +151,11 @@ export default function Footer() {
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-stone/40 text-sm">
-              \u00a9 2007\u2013{currentYear} Laboratoire Dentaire AIDE. Tous droits r\u00e9serv\u00e9s.
+              © 2007–{currentYear} Laboratoire Dentaire AIDE. Tous droits réservés.
             </p>
             <div className="flex items-center gap-4 md:gap-6 text-sm text-stone/40">
-              <a href="#" className="hover:text-coral transition-colors py-1">
-                Politique de confidentialit\u00e9
+              <a href="#" className="hover:text-azure transition-colors py-1">
+                Politique de confidentialité
               </a>
             </div>
           </div>

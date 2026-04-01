@@ -10,7 +10,7 @@ import CTABand from '../components/CTABand'
 export default function HomePage() {
   useDocumentMeta({
     title: 'Accueil',
-    description: 'Laboratoire dentaire AIDE \u00e0 Laval, QC. Sp\u00e9cialistes en implants, couronnes et ponts. Assistance chirurgicale sur place. Depuis 2007.'
+    description: 'Laboratoire dentaire AIDE à Laval, QC. Spécialistes en implants, couronnes et ponts. Assistance chirurgicale sur place. Depuis 2007.'
   })
 
   return (

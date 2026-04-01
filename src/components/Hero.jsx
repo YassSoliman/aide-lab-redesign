@@ -19,7 +19,7 @@ export default function Hero() {
       </div>
 
       {/* Decorative elements */}
-      <div className="hidden md:block absolute top-1/4 right-0 w-96 h-96 rounded-full bg-coral/5 blur-3xl" />
+      <div className="hidden md:block absolute top-1/4 right-0 w-96 h-96 rounded-full bg-azure/5 blur-3xl" />
       <div className="hidden md:block absolute bottom-1/4 left-0 w-64 h-64 rounded-full bg-sage/10 blur-3xl" />
 
       <div className="container-custom relative z-10 pt-32 pb-20 md:pt-40 md:pb-32">
@@ -32,9 +32,9 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-sm font-medium
-                bg-ink/5 text-sage-dark"
+                bg-cacao/5 text-sage-dark"
             >
-              <span className="w-2 h-2 rounded-full bg-coral animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-azure animate-pulse" />
               Laboratoire dentaire à Laval, QC
             </motion.div>
 
@@ -50,8 +50,8 @@ export default function Hero() {
                     delay: 0.3 + i * 0.1,
                     ease: [0.16, 1, 0.3, 1]
                   }}
-                  className={`inline-block mr-2 md:mr-3 font-display text-2xl-fluid leading-none text-ink
-                    ${word === 'référence' ? 'text-coral italic' : ''}`}
+                  className={`inline-block mr-2 md:mr-3 font-display text-2xl-fluid leading-none text-cacao
+                    ${word === 'référence' ? 'text-azure italic' : ''}`}
                 >
                   {word}
                 </motion.span>
@@ -63,7 +63,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="text-lg md:text-xl leading-relaxed mb-10 max-w-lg text-ink/70"
+              className="text-lg md:text-xl leading-relaxed mb-10 max-w-lg text-cacao/70"
             >
               Implants, couronnes et ponts fabriqués avec précision au Québec.
               Assistance chirurgicale sur place pour vos cas les plus complexes.
@@ -83,7 +83,7 @@ export default function Hero() {
               <a
                 href="tel:1-888-350-2246"
                 className="inline-flex items-center justify-center gap-2 px-6 py-4
-                  border border-ink/20 text-ink hover:bg-ink hover:text-stone
+                  border border-cacao/20 text-cacao hover:bg-cacao hover:text-stone
                   transition-all duration-300 font-medium"
               >
                 <Phone className="w-5 h-5" />
@@ -96,7 +96,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 1.1 }}
-              className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-6 text-sm font-mono text-ink/50"
+              className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-6 text-sm font-mono text-cacao/50"
             >
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
@@ -123,8 +123,8 @@ export default function Hero() {
           >
             <div className="relative">
               {/* Decorative frame */}
-              <div className="absolute -inset-4 border border-coral/20 -z-10" />
-              <div className="absolute -inset-8 border border-coral/10 -z-10" />
+              <div className="absolute -inset-4 border border-azure/20 -z-10" />
+              <div className="absolute -inset-8 border border-azure/10 -z-10" />
 
               {/* Main image */}
               <motion.div
@@ -147,8 +147,8 @@ export default function Hero() {
                 transition={{ duration: 0.5, delay: 1.2 }}
                 className="absolute -bottom-6 -left-6 p-6 bg-white shadow-2xl"
               >
-                <div className="text-4xl font-display text-coral mb-1">19</div>
-                <div className="text-sm text-ink/70">
+                <div className="text-4xl font-display text-azure mb-1">19</div>
+                <div className="text-sm text-cacao/70">
                   Années d'expertise
                 </div>
               </motion.div>
@@ -167,12 +167,12 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 flex items-start justify-center p-2 border-ink/30"
+          className="w-6 h-10 rounded-full border-2 flex items-start justify-center p-2 border-cacao/30"
         >
           <motion.div
             animate={{ height: [4, 12, 4] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1 bg-coral rounded-full"
+            className="w-1 bg-azure rounded-full"
           />
         </motion.div>
       </motion.div>

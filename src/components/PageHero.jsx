@@ -14,7 +14,7 @@ export default function PageHero({ eyebrow, title, subtitle, backgroundImage }) 
         </div>
       )}
 
-      <div className="hidden md:block absolute top-1/3 right-0 w-96 h-96 rounded-full bg-coral/5 blur-3xl" />
+      <div className="hidden md:block absolute top-1/3 right-0 w-96 h-96 rounded-full bg-azure/5 blur-3xl" />
 
       <div className="container-custom relative z-10">
         <motion.div
@@ -24,15 +24,15 @@ export default function PageHero({ eyebrow, title, subtitle, backgroundImage }) 
           className="max-w-3xl"
         >
           {eyebrow && (
-            <span className="inline-block text-sm font-mono tracking-widest uppercase mb-4 text-coral-dark">
+            <span className="inline-block text-sm font-mono tracking-widest uppercase mb-4 text-azure-dark">
               {eyebrow}
             </span>
           )}
-          <h1 className="font-display text-2xl-fluid text-ink mb-4">
+          <h1 className="font-display text-2xl-fluid text-cacao mb-4">
             {title}
           </h1>
           {subtitle && (
-            <p className="text-lg md:text-xl leading-relaxed text-ink/70 max-w-2xl">
+            <p className="text-lg md:text-xl leading-relaxed text-cacao/70 max-w-2xl">
               {subtitle}
             </p>
           )}

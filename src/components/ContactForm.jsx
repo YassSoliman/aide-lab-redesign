@@ -40,29 +40,29 @@ export default function ContactForm() {
         animate={{ opacity: 1, scale: 1 }}
         className="text-center py-12"
       >
-        <CheckCircle className="w-16 h-16 text-coral mx-auto mb-6" />
-        <h3 className="font-display text-xl-fluid text-ink mb-2">Merci!</h3>
-        <p className="text-ink/70">Notre \u00e9quipe vous r\u00e9pondra dans les 24 heures.</p>
+        <CheckCircle className="w-16 h-16 text-azure mx-auto mb-6" />
+        <h3 className="font-display text-xl-fluid text-cacao mb-2">Merci!</h3>
+        <p className="text-cacao/70">Notre équipe vous répondra dans les 24 heures.</p>
       </motion.div>
     )
   }
 
   const inputClass = (field) =>
-    `w-full px-4 py-3 bg-white border text-ink placeholder:text-ink/40 outline-none transition-all duration-300
-    focus:border-coral/50 focus:ring-1 focus:ring-coral/20
-    ${errors[field] ? 'border-red-400' : 'border-ink/10'}`
+    `w-full px-4 py-3 bg-white border text-cacao placeholder:text-cacao/40 outline-none transition-all duration-300
+    focus:border-azure/50 focus:ring-1 focus:ring-azure/20
+    ${errors[field] ? 'border-red-400' : 'border-cacao/10'}`
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-ink mb-1.5">Nom complet *</label>
+          <label htmlFor="name" className="block text-sm font-medium text-cacao mb-1.5">Nom complet *</label>
           <input id="name" type="text" value={form.name} onChange={handleChange('name')}
             placeholder="Dr. Jean Tremblay" className={inputClass('name')} />
           {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-ink mb-1.5">Courriel *</label>
+          <label htmlFor="email" className="block text-sm font-medium text-cacao mb-1.5">Courriel *</label>
           <input id="email" type="email" value={form.email} onChange={handleChange('email')}
             placeholder="dr.tremblay@clinique.com" className={inputClass('email')} />
           {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
@@ -70,20 +70,20 @@ export default function ContactForm() {
       </div>
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-ink mb-1.5">T\u00e9l\u00e9phone</label>
+          <label htmlFor="phone" className="block text-sm font-medium text-cacao mb-1.5">Téléphone</label>
           <input id="phone" type="tel" value={form.phone} onChange={handleChange('phone')}
             placeholder="(450) 555-1234" className={inputClass('phone')} />
         </div>
         <div>
-          <label htmlFor="clinic" className="block text-sm font-medium text-ink mb-1.5">Clinique / Cabinet</label>
+          <label htmlFor="clinic" className="block text-sm font-medium text-cacao mb-1.5">Clinique / Cabinet</label>
           <input id="clinic" type="text" value={form.clinic} onChange={handleChange('clinic')}
             placeholder="Clinique Dentaire XYZ" className={inputClass('clinic')} />
         </div>
       </div>
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-ink mb-1.5">Message *</label>
+        <label htmlFor="message" className="block text-sm font-medium text-cacao mb-1.5">Message *</label>
         <textarea id="message" value={form.message} onChange={handleChange('message')}
-          placeholder="D\u00e9crivez votre besoin ou votre cas..." rows={5}
+          placeholder="Décrivez votre besoin ou votre cas..." rows={5}
           className={`${inputClass('message')} resize-none`} />
         {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
       </div>

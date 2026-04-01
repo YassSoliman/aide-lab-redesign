@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function MobileCTABar() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-ink border-t border-white/10 safe-area-bottom">
+    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-cacao border-t border-white/10 safe-area-bottom">
       <div className="flex">
         <a
           href="tel:1-888-350-2246"
@@ -15,8 +15,8 @@ export default function MobileCTABar() {
         </a>
         <Link
           to="/fr/contact"
-          className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-coral text-white text-sm font-medium
-            active:bg-coral-dark transition-colors"
+          className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-azure text-white text-sm font-medium
+            active:bg-azure-dark transition-colors"
         >
           <MessageCircle className="w-4 h-4" />
           Nous joindre

@@ -9,20 +9,20 @@ export default {
     extend: {
       colors: {
         // Primary palette - Precision Craft
-        ink: {
-          DEFAULT: '#3A1D17',
-          light: '#4E3029',
-          lighter: '#624440',
+        cacao: {
+          DEFAULT: '#3C1F19',
+          light: '#503129',
+          lighter: '#654543',
         },
         stone: {
           DEFAULT: '#FAFBFC',
           dark: '#EEF3F8',
           darker: '#DDE6EE',
         },
-        coral: {
-          DEFAULT: '#2E6FA5',
-          light: '#A1C8EA',
-          dark: '#1E5A8A',
+        azure: {
+          DEFAULT: '#2B6EA3',
+          light: '#A2C9E9',
+          dark: '#1B5685',
         },
         sage: {
           DEFAULT: '#8B7B73',

@@ -16,19 +16,19 @@ export default function NotFoundPage() {
         transition={{ duration: 0.5 }}
         className="text-center px-6"
       >
-        <div className="text-8xl font-display text-coral mb-4">404</div>
-        <h1 className="font-display text-xl-fluid text-ink mb-4">Page introuvable</h1>
-        <p className="text-ink/60 mb-10 max-w-md mx-auto">
-          La page que vous recherchez n'existe pas ou a \u00e9t\u00e9 d\u00e9plac\u00e9e.
+        <div className="text-8xl font-display text-azure mb-4">404</div>
+        <h1 className="font-display text-xl-fluid text-cacao mb-4">Page introuvable</h1>
+        <p className="text-cacao/60 mb-10 max-w-md mx-auto">
+          La page que vous recherchez n'existe pas ou a été déplacée.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link to="/" className="btn-primary">
-            Retour \u00e0 l'accueil
+            Retour à l'accueil
           </Link>
           <Link
             to="/fr/contact"
-            className="inline-flex items-center gap-2 px-6 py-4 border border-ink/20 text-ink
-              hover:bg-ink hover:text-stone transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 py-4 border border-cacao/20 text-cacao
+              hover:bg-cacao hover:text-stone transition-all duration-300"
           >
             Nous joindre
           </Link>

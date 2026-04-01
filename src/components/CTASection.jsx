@@ -8,9 +8,9 @@ export default function CTASection({ headline, description, primaryAction, secon
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-ink">
+    <section ref={ref} className="relative overflow-hidden bg-cacao">
       <div className="hidden md:block absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-coral-light blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-azure-light blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full bg-white blur-3xl" />
       </div>
 
@@ -40,14 +40,14 @@ export default function CTASection({ headline, description, primaryAction, secon
             {secondaryAction && (
               <a
                 href={secondaryAction.href}
-                className="group flex items-center gap-4 px-6 py-4 bg-white text-ink
-                  hover:bg-ink hover:text-white transition-all duration-300 w-full sm:w-auto active:scale-95"
+                className="group flex items-center gap-4 px-6 py-4 bg-white text-cacao
+                  hover:bg-cacao hover:text-white transition-all duration-300 w-full sm:w-auto active:scale-95"
               >
-                <div className="p-2 bg-coral-light/20 group-hover:bg-coral-light/30 transition-colors">
-                  <Phone className="w-5 h-5 text-coral" />
+                <div className="p-2 bg-azure-light/20 group-hover:bg-azure-light/30 transition-colors">
+                  <Phone className="w-5 h-5 text-azure" />
                 </div>
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-wide text-ink/50 mb-1">
+                  <div className="text-xs font-mono uppercase tracking-wide text-cacao/50 mb-1">
                     Sans frais
                   </div>
                   <div className="font-medium">{secondaryAction.label}</div>
@@ -59,7 +59,7 @@ export default function CTASection({ headline, description, primaryAction, secon
               <Link
                 to={primaryAction.href}
                 className="group flex items-center justify-between gap-4 px-6 py-4
-                  bg-coral text-white hover:bg-coral-dark
+                  bg-azure text-white hover:bg-azure-dark
                   transition-all duration-300 w-full sm:w-auto active:scale-95"
               >
                 <div className="font-medium">{primaryAction.label}</div>

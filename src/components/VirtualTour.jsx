@@ -52,33 +52,33 @@ export default function VirtualTour() {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="inline-block text-sm font-mono tracking-widest uppercase mb-6 text-coral-dark">
+              <span className="inline-block text-sm font-mono tracking-widest uppercase mb-6 text-azure-dark">
                 Visite immersive 360°
               </span>
 
-              <h2 className="font-display text-2xl-fluid mb-6 text-ink">
+              <h2 className="font-display text-2xl-fluid mb-6 text-cacao">
                 Visitez notre
-                <span className="block text-coral italic">atelier</span>
+                <span className="block text-azure italic">atelier</span>
               </h2>
 
-              <p className="text-lg leading-relaxed mb-8 max-w-lg text-ink/70">
+              <p className="text-lg leading-relaxed mb-8 max-w-lg text-cacao/70">
                 Découvrez nos installations de pointe et voyez où la magie opère.
                 Notre laboratoire à la fine pointe de la technologie est équipé
                 des meilleurs outils pour garantir des résultats exceptionnels.
               </p>
 
               {/* Stats row */}
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 md:gap-12 mb-10 text-ink/60">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 md:gap-12 mb-10 text-cacao/60">
                 <div>
-                  <div className="text-3xl font-display text-coral">5,000</div>
+                  <div className="text-3xl font-display text-azure">5,000</div>
                   <div className="text-sm font-mono">pi² d'espace</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-display text-coral">12</div>
+                  <div className="text-3xl font-display text-azure">12</div>
                   <div className="text-sm font-mono">postes de travail</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-display text-coral">CAD/CAM</div>
+                  <div className="text-3xl font-display text-azure">CAD/CAM</div>
                   <div className="text-sm font-mono">technologie</div>
                 </div>
               </div>
@@ -122,22 +122,22 @@ export default function VirtualTour() {
                   <motion.div
                     whileHover={{ scale: 1.1 }}
                     className="w-20 h-20 rounded-full flex items-center justify-center
-                      transition-all duration-300 bg-coral text-white hover:bg-coral-dark"
+                      transition-all duration-300 bg-azure text-white hover:bg-azure-dark"
                   >
                     <Maximize2 className="w-8 h-8" />
                   </motion.div>
                 </button>
 
                 <div className="absolute top-4 left-4 px-3 py-1.5 text-xs font-mono tracking-wide
-                  bg-white/80 text-ink">
+                  bg-white/80 text-cacao">
                   360° INTERACTIF
                 </div>
               </div>
 
-              <div className="hidden md:block absolute -top-3 -left-3 w-12 h-12 border-t-2 border-l-2 border-coral" />
-              <div className="hidden md:block absolute -bottom-3 -right-3 w-12 h-12 border-b-2 border-r-2 border-coral" />
+              <div className="hidden md:block absolute -top-3 -left-3 w-12 h-12 border-t-2 border-l-2 border-azure" />
+              <div className="hidden md:block absolute -bottom-3 -right-3 w-12 h-12 border-b-2 border-r-2 border-azure" />
 
-              <p className="mt-6 text-center text-sm font-mono text-ink/50">
+              <p className="mt-6 text-center text-sm font-mono text-cacao/50">
                 Cliquez pour une expérience plein écran
               </p>
             </motion.div>
@@ -153,7 +153,7 @@ export default function VirtualTour() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[100] bg-ink"
+            className="fixed inset-0 z-[100] bg-cacao"
           >
             <button
               onClick={() => setIsExpanded(false)}
@@ -169,7 +169,7 @@ export default function VirtualTour() {
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                    className="w-12 h-12 border-2 border-coral border-t-transparent rounded-full mx-auto mb-4"
+                    className="w-12 h-12 border-2 border-azure border-t-transparent rounded-full mx-auto mb-4"
                   />
                   <p className="text-stone/60 font-mono text-sm">Chargement de la visite...</p>
                 </div>

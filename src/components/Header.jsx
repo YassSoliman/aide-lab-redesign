@@ -29,7 +29,7 @@ export default function Header() {
 
   const navLinkClass = ({ isActive }) =>
     `flex items-center gap-1 text-sm font-medium tracking-wide link-underline transition-colors duration-200
-    ${isActive ? 'text-coral-dark' : 'text-ink/80 hover:text-ink'}`
+    ${isActive ? 'text-azure-dark' : 'text-cacao/80 hover:text-cacao'}`
 
   return (
     <motion.header
@@ -38,7 +38,7 @@ export default function Header() {
       transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-stone/90 backdrop-blur-xl border-b border-ink/5'
+          ? 'bg-stone/90 backdrop-blur-xl border-b border-cacao/5'
           : 'bg-transparent'
       }`}
     >
@@ -81,7 +81,7 @@ export default function Header() {
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
                       className="absolute top-full left-0 mt-2 py-3 min-w-[200px] rounded-sm
-                        bg-white border border-ink/10 shadow-xl"
+                        bg-white border border-cacao/10 shadow-xl"
                     >
                       {item.children.map((child) => (
                         <NavLink
@@ -90,8 +90,8 @@ export default function Header() {
                           className={({ isActive }) =>
                             `block px-5 py-2.5 text-sm transition-colors
                             ${isActive
-                              ? 'text-coral-dark bg-ink/5'
-                              : 'text-ink/70 hover:text-ink hover:bg-ink/5'
+                              ? 'text-azure-dark bg-cacao/5'
+                              : 'text-cacao/70 hover:text-cacao hover:bg-cacao/5'
                             }`
                           }
                         >
@@ -109,7 +109,7 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <a
               href="tel:1-888-350-2246"
-              className="flex items-center gap-2 text-sm font-mono text-coral-dark"
+              className="flex items-center gap-2 text-sm font-mono text-azure-dark"
             >
               <Phone className="w-4 h-4" />
               <span className="hidden md:inline">1 (888) 350-2246</span>
@@ -125,7 +125,7 @@ export default function Header() {
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-ink"
+              className="lg:hidden p-2 text-cacao"
               aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -142,7 +142,7 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden overflow-hidden bg-stone border-t border-ink/5"
+            className="lg:hidden overflow-hidden bg-stone border-t border-cacao/5"
           >
             <div className="container-custom py-6 space-y-4">
               {navigation.map((item) => (
@@ -152,7 +152,7 @@ export default function Header() {
                     end={item.href === '/'}
                     onClick={() => setMobileMenuOpen(false)}
                     className={({ isActive }) =>
-                      `block py-2 text-lg font-medium ${isActive ? 'text-coral-dark' : 'text-ink'}`
+                      `block py-2 text-lg font-medium ${isActive ? 'text-azure-dark' : 'text-cacao'}`
                     }
                   >
                     {item.name}
@@ -165,7 +165,7 @@ export default function Header() {
                           to={child.href}
                           onClick={() => setMobileMenuOpen(false)}
                           className={({ isActive }) =>
-                            `block py-1.5 text-sm ${isActive ? 'text-coral-dark' : 'text-ink/60'}`
+                            `block py-1.5 text-sm ${isActive ? 'text-azure-dark' : 'text-cacao/60'}`
                           }
                         >
                           {child.name}
@@ -175,10 +175,10 @@ export default function Header() {
                   )}
                 </div>
               ))}
-              <div className="pt-4 border-t border-ink/10">
+              <div className="pt-4 border-t border-cacao/10">
                 <a
                   href="tel:1-888-350-2246"
-                  className="flex items-center gap-2 font-mono text-coral-dark"
+                  className="flex items-center gap-2 font-mono text-azure-dark"
                 >
                   <Phone className="w-4 h-4" />
                   1 (888) 350-2246
