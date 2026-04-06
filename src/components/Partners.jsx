@@ -2,11 +2,35 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { partners } from '../data/partners'
 
+function LogoSet() {
+  return (
+    <>
+      {partners.map((partner) => (
+        <div
+          key={partner.name}
+          className="flex-none w-[200px] h-[80px] mx-6 flex items-center justify-center
+            opacity-50 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+        >
+          <img
+            src={partner.logo}
+            alt={partner.name}
+            loading="lazy"
+            className={`object-contain ${
+              partner.size === 'lg' ? 'max-w-[180px] max-h-[80px] scale-150' :
+              partner.size === 'md' ? 'max-w-[180px] max-h-[80px] scale-125' :
+              partner.size === 'sm' ? 'max-w-[180px] max-h-[70px] scale-110' :
+              'max-w-[180px] max-h-[70px]'
+            }`}
+          />
+        </div>
+      ))}
+    </>
+  )
+}
+
 export default function Partners() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-
-  const doubledPartners = [...partners, ...partners]
 
   return (
     <section
@@ -21,15 +45,15 @@ export default function Partners() {
           className="text-center"
         >
           <span className="inline-block text-sm font-mono tracking-widest uppercase mb-4 text-cacao/50">
-            Partenaires de confiance
+            Nos technologies
           </span>
           <h2 className="font-display text-xl-fluid text-cacao">
-            Nous travaillons avec les meilleurs
+            Compatible avec les leaders de l'industrie
           </h2>
         </motion.div>
       </div>
 
-      {/* Marquee container */}
+      {/* Marquee */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
@@ -42,27 +66,11 @@ export default function Partners() {
         <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 z-10 pointer-events-none
           bg-gradient-to-l from-stone to-transparent" />
 
-        {/* Scrolling track */}
-        <div className="flex animate-marquee">
-          {doubledPartners.map((partner, index) => (
-            <div
-              key={`${partner.name}-${index}`}
-              className="flex-shrink-0 px-8 md:px-12"
-            >
-              <div className="group relative h-16 w-32 md:w-48 flex items-center justify-center gap-2 md:gap-3
-                transition-all duration-300 opacity-60 hover:opacity-100">
-                <div
-                  className="w-10 h-10 flex items-center justify-center rounded text-white font-bold text-sm"
-                  style={{ backgroundColor: partner.color }}
-                >
-                  {partner.initials}
-                </div>
-                <span className="text-sm font-medium whitespace-nowrap text-cacao">
-                  {partner.name}
-                </span>
-              </div>
-            </div>
-          ))}
+        {/* Track: each logo slot is exactly 200px + 48px margin = 248px.
+             10 logos = 2480px per set. translateX(-50%) = one full set. */}
+        <div className="flex animate-marquee" style={{ width: `${partners.length * 248 * 2}px` }}>
+          <LogoSet />
+          <LogoSet />
         </div>
       </motion.div>
 
@@ -73,7 +81,7 @@ export default function Partners() {
         className="container-custom mt-12 text-center"
       >
         <p className="text-sm font-mono text-cacao/40">
-          {partners.length}+ fabricants de premier plan
+          Nous maîtrisons les systèmes que vous utilisez
         </p>
       </motion.div>
     </section>

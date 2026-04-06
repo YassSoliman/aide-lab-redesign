@@ -45,13 +45,13 @@ export default function CTABand() {
             <a
               href="tel:450-937-5191"
               className="group flex items-center gap-4 px-6 py-4 bg-white text-cacao
-                hover:bg-cacao hover:text-white transition-all duration-300 w-full sm:w-auto active:scale-95"
+                hover:bg-azure hover:text-white transition-all duration-300 w-full sm:w-auto active:scale-95"
             >
               <div className="p-2 bg-azure-light/20 group-hover:bg-azure-light/30 transition-colors">
-                <Phone className="w-5 h-5 text-azure" />
+                <Phone className="w-5 h-5 text-azure group-hover:text-white" />
               </div>
               <div>
-                <div className="text-xs font-mono uppercase tracking-wide text-cacao/50 mb-1">
+                <div className="text-xs font-mono uppercase tracking-wide text-cacao/50 group-hover:text-white/60 mb-1">
                   Téléphone
                 </div>
                 <div className="font-medium">(450) 937-5191</div>

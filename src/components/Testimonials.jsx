@@ -1,146 +1,287 @@
-import { useState, useRef } from 'react'
-import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react'
-import { testimonials } from '../data/testimonials'
+import { useState, useRef, useEffect } from 'react'
+import { motion, useInView } from 'framer-motion'
+import { Play, Pause, Volume2, VolumeX, Maximize, Quote } from 'lucide-react'
 
 export default function Testimonials() {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [isMuted, setIsMuted] = useState(false)
+  const [progress, setProgress] = useState(0)
+  const [hasInteracted, setHasInteracted] = useState(false)
+  const videoRef = useRef(null)
+  const sectionRef = useRef(null)
+  const progressRef = useRef(null)
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
 
-  const next = () => setActiveIndex((prev) => (prev + 1) % testimonials.length)
-  const prev = () => setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
 
-  const currentTestimonial = testimonials[activeIndex]
+    const updateProgress = () => {
+      if (video.duration) {
+        setProgress((video.currentTime / video.duration) * 100)
+      }
+    }
+
+    const handleEnded = () => {
+      setIsPlaying(false)
+      setProgress(0)
+    }
+
+    video.addEventListener('timeupdate', updateProgress)
+    video.addEventListener('ended', handleEnded)
+    return () => {
+      video.removeEventListener('timeupdate', updateProgress)
+      video.removeEventListener('ended', handleEnded)
+    }
+  }, [])
+
+  const togglePlay = () => {
+    const video = videoRef.current
+    if (!video) return
+
+    if (!hasInteracted) setHasInteracted(true)
+
+    if (video.paused) {
+      video.play()
+      setIsPlaying(true)
+    } else {
+      video.pause()
+      setIsPlaying(false)
+    }
+  }
+
+  const toggleMute = (e) => {
+    e.stopPropagation()
+    const video = videoRef.current
+    if (!video) return
+    video.muted = !video.muted
+    setIsMuted(!isMuted)
+  }
+
+  const handleProgressClick = (e) => {
+    const video = videoRef.current
+    const bar = progressRef.current
+    if (!video || !bar) return
+    const rect = bar.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const pct = x / rect.width
+    video.currentTime = pct * video.duration
+  }
 
   return (
     <section
-      ref={ref}
-      className="section-padding overflow-hidden bg-white"
+      ref={sectionRef}
+      className="relative overflow-hidden bg-cacao"
     >
-      <div className="container-custom">
-        {/* Section header */}
+      {/* Subtle ambient glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/3 -left-32 w-96 h-96 rounded-full bg-azure/8 blur-[120px]" />
+        <div className="absolute bottom-1/4 right-0 w-64 h-64 rounded-full bg-azure/5 blur-[100px]" />
+      </div>
+
+      <div className="container-custom relative z-10 py-20 md:py-28 lg:py-32">
+        {/* Section eyebrow */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16 md:mb-20"
+          transition={{ duration: 0.5 }}
+          className="mb-14 md:mb-20"
         >
-          <span className="inline-block text-sm font-mono tracking-widest uppercase mb-4 text-azure-dark">
-            Témoignages
+          <span className="inline-block text-sm font-mono tracking-widest uppercase text-azure/70">
+            Témoignage
           </span>
-          <h2 className="font-display text-2xl-fluid text-cacao">
-            Les dentistes nous font confiance
-          </h2>
         </motion.div>
 
-        {/* Testimonial showcase */}
-        <div className="max-w-4xl mx-auto">
+        {/* Main content grid */}
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+
+          {/* Video column — takes 7 of 12 columns */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 relative"
           >
-            <Quote className="absolute -top-8 -left-4 md:-left-12 w-16 h-16 md:w-24 md:h-24 text-azure/10" />
+            {/* Video container */}
+            <div
+              className="relative aspect-video overflow-hidden cursor-pointer group"
+              onClick={togglePlay}
+            >
+              <video
+                ref={videoRef}
+                src="/dr-stutman-testimonial.mp4"
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-cover"
+                poster=""
+              />
 
-            <AnimatePresence mode="wait">
-              <motion.blockquote
-                key={activeIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4 }}
-                className="relative z-10"
+              {/* Dark vignette overlay — fades on play */}
+              <div
+                className="absolute inset-0 transition-opacity duration-700 pointer-events-none"
+                style={{
+                  opacity: isPlaying ? 0 : 1,
+                  background: 'radial-gradient(ellipse at center, transparent 40%, rgba(60,31,25,0.5) 100%)',
+                }}
+              />
+
+              {/* Play button — center */}
+              <div
+                className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${
+                  isPlaying && hasInteracted ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'
+                }`}
               >
-                <p className="font-display text-xl-fluid md:text-2xl-fluid text-center leading-relaxed mb-10 text-cacao">
-                  "{currentTestimonial.quote}"
-                </p>
-
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full mb-4 flex items-center justify-center
-                    text-2xl font-display bg-azure/10 text-azure-dark">
-                    {currentTestimonial.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-
-                  <div className="text-center">
-                    <div className="font-medium text-lg mb-1 text-cacao">
-                      {currentTestimonial.name}
-                    </div>
-                    <div className="text-sm font-mono text-cacao/50">
-                      {currentTestimonial.clinic}
-                    </div>
-                  </div>
-
-                  <div className="flex gap-1 mt-4">
-                    {[...Array(currentTestimonial.rating)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="w-4 h-4 fill-amber-500 text-amber-500"
-                      />
-                    ))}
-                  </div>
-                </div>
-              </motion.blockquote>
-            </AnimatePresence>
-
-            {/* Navigation */}
-            <div className="flex items-center justify-center gap-4 mt-12">
-              <button
-                onClick={prev}
-                className="p-3 transition-all duration-200 bg-cacao/5 hover:bg-cacao/10 text-cacao"
-                aria-label="Précédent"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-
-              <div className="flex gap-2">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      index === activeIndex
-                        ? 'w-6 bg-azure'
-                        : 'bg-cacao/20 hover:bg-cacao/40'
-                    }`}
-                    aria-label={`Témoignage ${index + 1}`}
-                  />
-                ))}
+                <motion.div
+                  whileHover={{ scale: 1.08 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center
+                    bg-white/15 backdrop-blur-md border border-white/20
+                    transition-colors duration-300 hover:bg-white/25"
+                >
+                  {isPlaying ? (
+                    <Pause className="w-6 h-6 md:w-7 md:h-7 text-white" />
+                  ) : (
+                    <Play className="w-6 h-6 md:w-7 md:h-7 text-white ml-1" />
+                  )}
+                </motion.div>
               </div>
 
-              <button
-                onClick={next}
-                className="p-3 transition-all duration-200 bg-cacao/5 hover:bg-cacao/10 text-cacao"
-                aria-label="Suivant"
+              {/* Bottom controls bar */}
+              <div
+                className={`absolute bottom-0 left-0 right-0 px-4 pb-4 pt-12 transition-opacity duration-400
+                  bg-gradient-to-t from-cacao/80 to-transparent ${
+                    hasInteracted ? 'opacity-100' : 'opacity-0'
+                  }`}
               >
-                <ChevronRight className="w-5 h-5" />
-              </button>
+                <div className="flex items-center gap-3">
+                  {/* Progress bar */}
+                  <div
+                    ref={progressRef}
+                    className="flex-1 h-1 bg-white/20 cursor-pointer rounded-full overflow-hidden group/bar"
+                    onClick={(e) => { e.stopPropagation(); handleProgressClick(e) }}
+                  >
+                    <div
+                      className="h-full bg-azure transition-[width] duration-100 rounded-full"
+                      style={{ width: `${progress}%` }}
+                    />
+                  </div>
+
+                  {/* Mute toggle */}
+                  <button
+                    onClick={toggleMute}
+                    className="p-1.5 text-white/70 hover:text-white transition-colors"
+                    aria-label={isMuted ? 'Activer le son' : 'Couper le son'}
+                  >
+                    {isMuted ? (
+                      <VolumeX className="w-4 h-4" />
+                    ) : (
+                      <Volume2 className="w-4 h-4" />
+                    )}
+                  </button>
+
+                  {/* Fullscreen toggle */}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      const container = videoRef.current?.parentElement
+                      if (!container) return
+                      if (document.fullscreenElement) {
+                        document.exitFullscreen()
+                      } else {
+                        container.requestFullscreen()
+                      }
+                    }}
+                    className="p-1.5 text-white/70 hover:text-white transition-colors"
+                    aria-label="Plein écran"
+                  >
+                    <Maximize className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Corner accents */}
+            <div className="hidden md:block absolute -top-3 -left-3 w-10 h-10 border-t border-l border-azure/30" />
+            <div className="hidden md:block absolute -bottom-3 -right-3 w-10 h-10 border-b border-r border-azure/30" />
+          </motion.div>
+
+          {/* Text column — takes 5 of 12 columns */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 flex flex-col justify-center"
+          >
+            {/* Quote */}
+            <div className="relative mb-10">
+              <Quote className="absolute -top-6 -left-2 w-12 h-12 text-azure/15" />
+              <blockquote className="relative z-10">
+                <p className="font-display text-xl-fluid italic leading-snug text-stone/90">
+                  I've never seen such accuracy out of anything that I've done before.
+                </p>
+              </blockquote>
+            </div>
+
+            {/* Doctor info — editorial card */}
+            <div className="border-t border-white/10 pt-8">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 rounded-full flex items-center justify-center
+                  text-lg font-display bg-azure/15 text-azure border border-azure/20">
+                  PS
+                </div>
+                <div>
+                  <div className="font-medium text-lg text-stone">
+                    Dr. Peter Stutman
+                  </div>
+                  <div className="text-sm font-mono text-azure/70 tracking-wide">
+                    Prosthodontiste
+                  </div>
+                </div>
+              </div>
+
+              {/* Credential tags */}
+              <div className="flex flex-wrap gap-2">
+                {['Implants', 'Prothèses', 'Cas complexes'].map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-block px-3 py-1 text-xs font-mono tracking-wide
+                      text-stone/40 border border-white/8 bg-white/3"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Trust stats */}
+        {/* Trust stats — bottom row */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="text-center mt-16 pt-12 border-t border-cacao/5"
+          transition={{ duration: 0.5, delay: 0.7 }}
+          className="mt-20 md:mt-28 pt-10 border-t border-white/8"
         >
-          <div className="inline-flex flex-col md:flex-row items-center gap-6 md:gap-8 text-cacao/50">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-14">
             <div className="text-center">
-              <div className="text-3xl font-display text-azure">Laval, QC</div>
-              <div className="text-xs font-mono uppercase tracking-wide">Fabriqué au Québec</div>
+              <div className="text-2xl md:text-3xl font-display text-azure">Laval, QC</div>
+              <div className="text-xs font-mono uppercase tracking-wide text-stone/35 mt-1">
+                Fabriqué au Québec
+              </div>
             </div>
-            <div className="hidden md:block w-px h-12 bg-cacao/10" />
+            <div className="hidden md:block w-px h-10 bg-white/10" />
             <div className="text-center">
-              <div className="text-3xl font-display text-azure">Sur place</div>
-              <div className="text-xs font-mono uppercase tracking-wide">Assistance en clinique</div>
+              <div className="text-2xl md:text-3xl font-display text-azure">Sur place</div>
+              <div className="text-xs font-mono uppercase tracking-wide text-stone/35 mt-1">
+                Assistance en clinique
+              </div>
             </div>
-            <div className="hidden md:block w-px h-12 bg-cacao/10" />
+            <div className="hidden md:block w-px h-10 bg-white/10" />
             <div className="text-center">
-              <div className="text-3xl font-display text-azure">2007</div>
-              <div className="text-xs font-mono uppercase tracking-wide">Année de fondation</div>
+              <div className="text-2xl md:text-3xl font-display text-azure">2007</div>
+              <div className="text-xs font-mono uppercase tracking-wide text-stone/35 mt-1">
+                Année de fondation
+              </div>
             </div>
           </div>
         </motion.div>
